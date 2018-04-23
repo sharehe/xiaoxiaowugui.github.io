@@ -9,18 +9,18 @@
   
   <title>对象加载与创建 | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用 将对象的引用保存到volatile类型域或者AtomicReference对象中 将对象的引用保存到某个正确的构造对象的final类型域中 将对象的引用保存到一个由锁保护的域中  创建对象的步骤 检测类是否被加载当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息">
+  <meta name="description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用  将对象的引用保存到volatile类型域或者AtomicReference对象中  将对象的引用保存到某个正确的构造对象的final类型域中  将对象的引用保存到一个由锁保护的域中">
 <meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象加载与创建">
 <meta property="og:url" content="http://sharehe.cn/2018/04/21/对象加载与创建/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用 将对象的引用保存到volatile类型域或者AtomicReference对象中 将对象的引用保存到某个正确的构造对象的final类型域中 将对象的引用保存到一个由锁保护的域中  创建对象的步骤 检测类是否被加载当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息">
+<meta property="og:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用  将对象的引用保存到volatile类型域或者AtomicReference对象中  将对象的引用保存到某个正确的构造对象的final类型域中  将对象的引用保存到一个由锁保护的域中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-23T01:30:40.527Z">
+<meta property="og:updated_time" content="2018-04-23T01:38:20.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象加载与创建">
-<meta name="twitter:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用 将对象的引用保存到volatile类型域或者AtomicReference对象中 将对象的引用保存到某个正确的构造对象的final类型域中 将对象的引用保存到一个由锁保护的域中  创建对象的步骤 检测类是否被加载当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息">
+<meta name="twitter:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用  将对象的引用保存到volatile类型域或者AtomicReference对象中  将对象的引用保存到某个正确的构造对象的final类型域中  将对象的引用保存到一个由锁保护的域中">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -318,10 +318,17 @@
       
           
         <h2 id="安全发布对象的四种方法"><a href="#安全发布对象的四种方法" class="headerlink" title="安全发布对象的四种方法"></a>安全发布对象的四种方法</h2><ul>
-<li>在静态初始化函数中初始化一个对象引用</li>
-<li>将对象的引用保存到volatile类型域或者AtomicReference对象中</li>
-<li>将对象的引用保存到某个正确的构造对象的final类型域中</li>
-<li>将对象的引用保存到一个由锁保护的域中</li>
+<li><p>在静态初始化函数中初始化一个对象引用</p>
+</li>
+<li><p>将对象的引用保存到volatile类型域或者AtomicReference对象中</p>
+</li>
+<li><p>将对象的引用保存到某个正确的构造对象的final类型域中</p>
+</li>
+<li><p>将对象的引用保存到一个由锁保护的域中</p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+</the></li>
 </ul>
 <h2 id="创建对象的步骤"><a href="#创建对象的步骤" class="headerlink" title="创建对象的步骤"></a>创建对象的步骤</h2><ul>
 <li><h4 id="检测类是否被加载"><a href="#检测类是否被加载" class="headerlink" title="检测类是否被加载"></a>检测类是否被加载</h4><p>当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息</p>
@@ -346,7 +353,7 @@
         <p><span>本文标题:</span><a  href="/2018/04/21/对象加载与创建/">对象加载与创建</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
         <p><span>发布时间:</span>2018年04月21日 - 14时26分</p>
-        <p><span>最后更新:</span>2018年04月23日 - 09时30分</p>
+        <p><span>最后更新:</span>2018年04月23日 - 09时38分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/21/对象加载与创建/" title="对象加载与创建">http://sharehe.cn/2018/04/21/对象加载与创建/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/21/对象加载与创建/　　作者: 吾生有崖,而知无崖" title=""></span>

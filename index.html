@@ -306,25 +306,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="安全发布对象的四种方法"><a href="#安全发布对象的四种方法" class="headerlink" title="安全发布对象的四种方法"></a>安全发布对象的四种方法</h2><ul>
-<li>在静态初始化函数中初始化一个对象引用</li>
-<li>将对象的引用保存到volatile类型域或者AtomicReference对象中</li>
-<li>将对象的引用保存到某个正确的构造对象的final类型域中</li>
-<li>将对象的引用保存到一个由锁保护的域中</li>
-</ul>
-<h2 id="创建对象的步骤"><a href="#创建对象的步骤" class="headerlink" title="创建对象的步骤"></a>创建对象的步骤</h2><ul>
-<li><h4 id="检测类是否被加载"><a href="#检测类是否被加载" class="headerlink" title="检测类是否被加载"></a>检测类是否被加载</h4><p>当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息</p>
+              <h2 id="安全发布对象的四种方法"><a href="#安全发布对象的四种方法" class="headerlink" title="安全发布对象的四种方法"></a>安全发布对象的四种方法</h2><ul>
+<li><p>在静态初始化函数中初始化一个对象引用</p>
 </li>
-<li><h4 id="分配内存"><a href="#分配内存" class="headerlink" title="分配内存"></a>分配内存</h4></li>
-<li><h4 id="初始化对象-执行构造方法"><a href="#初始化对象-执行构造方法" class="headerlink" title="初始化对象 执行构造方法"></a>初始化对象 执行构造方法</h4></li>
-<li><h4 id="设置实例指向刚分配的内存-–与上一步可重排序"><a href="#设置实例指向刚分配的内存-–与上一步可重排序" class="headerlink" title="设置实例指向刚分配的内存 –与上一步可重排序"></a>设置实例指向刚分配的内存 –与上一步可重排序</h4></li>
-</ul>
-<h2 id="不可变对象需要满足的条件"><a href="#不可变对象需要满足的条件" class="headerlink" title="不可变对象需要满足的条件"></a>不可变对象需要满足的条件</h2><ul>
-<li>对象创建以后其状态就不能改变</li>
-<li>对象所有域都是final类型</li>
-<li>对象是正确创建的（在对象创建之间this引用没有被逸出）</li>
-</ul>
-
+<li><p>将对象的引用保存到volatile类型域或者AtomicReference对象中</p>
+</li>
+<li><p>将对象的引用保存到某个正确的构造对象的final类型域中</p>
+</li>
+<li><p>将对象的引用保存到一个由锁保护的域中</p>
+          
       
     </div>
     
@@ -341,6 +331,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2018/04/21/对象加载与创建/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
