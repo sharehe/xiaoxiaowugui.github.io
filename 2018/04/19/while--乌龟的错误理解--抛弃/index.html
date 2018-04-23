@@ -7,19 +7,20 @@
   
   
   
-  <title>Archives: 2018 | WuGui</title>
+  <title>while--乌龟的错误理解--抛弃 | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="梦想做系统分析师的乌龟">
-<meta name="keywords" content="贺严锋">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WuGui">
-<meta property="og:url" content="http://sharehe.cn/archives/2018/index.html">
+  <meta name="description" content="while(true);占用cpu不让出资源 ：     详解在线程中while(true);与while(true)i++;的区别">
+<meta name="keywords" content="JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="while--乌龟的错误理解--抛弃">
+<meta property="og:url" content="http://sharehe.cn/2018/04/19/while--乌龟的错误理解--抛弃/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="梦想做系统分析师的乌龟">
+<meta property="og:description" content="while(true);占用cpu不让出资源 ：     详解在线程中while(true);与while(true)i++;的区别">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-23T01:29:25.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WuGui">
-<meta name="twitter:description" content="梦想做系统分析师的乌龟">
+<meta name="twitter:title" content="while--乌龟的错误理解--抛弃">
+<meta name="twitter:description" content="while(true);占用cpu不让出资源 ：     详解在线程中while(true);与while(true)i++;的区别">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -44,8 +45,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -272,163 +273,210 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-while--乌龟的错误理解--抛弃" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a  href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2018/04/21/对象加载与创建/" class="archive-article-date">
-      <time datetime="2018-04-21T06:26:39.000Z" itemprop="datePublished">04-21</time>
+    <div class="article-meta">
+      <a  href="/2018/04/19/while--乌龟的错误理解--抛弃/" class="article-date">
+      <time datetime="2018-04-19T12:12:35.000Z" itemprop="datePublished">2018-04-19</time>
 </a>
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2018/04/21/对象加载与创建/">对象加载与创建</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      while--乌龟的错误理解--抛弃
     </h1>
   
 
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/safe/">safe</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2018/04/19/while--乌龟的错误理解--抛弃/" class="archive-article-date">
-      <time datetime="2018-04-19T12:12:35.000Z" itemprop="datePublished">04-19</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2018/04/19/while--乌龟的错误理解--抛弃/">while--乌龟的错误理解--抛弃</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/线程可见/">线程可见</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2018/04/19/ajax-jsonp/" class="archive-article-date">
-      <time datetime="2018-04-19T12:01:16.000Z" itemprop="datePublished">04-19</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2018/04/19/ajax-jsonp/">ajax和jsonp区别</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+        <p><strong> while(true);占用cpu不让出资源 ：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>    详解在线程中while(true);与while(true)i++;的区别<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用来验证多线程值同步问题</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> </span>&#123;</span><br><span class="line">    public <span class="keyword">static</span> boolean bool=<span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> synchronized <span class="keyword">void</span> get()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</span><br><span class="line">        thread_1 a=<span class="keyword">new</span> thread_1();</span><br><span class="line">        a.start();</span><br><span class="line">        thread_3 c=<span class="keyword">new</span> thread_3();</span><br><span class="line">        c.start();</span><br><span class="line">        thread_2 b=<span class="keyword">new</span> thread_2();</span><br><span class="line">        b.start();</span><br><span class="line">        System.out.println((int)<span class="string">'a'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        <span class="keyword">while</span> (MyThread.bool)&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">		System.out.println(<span class="string">"1end"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_2</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        MyThread.bool=<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_3</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        System.out.println(<span class="number">74</span>);</span><br><span class="line">        int i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (MyThread.bool)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"3end"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打住不要往下看我们先想一想执行结果是怎样的呢 是不是1end跟2end都会打印在控制台呢，</p>
+<h2 id="揭晓谜底"><a href="#揭晓谜底" class="headerlink" title="揭晓谜底"></a>揭晓谜底</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2018/04/19/while--乌龟的错误理解--抛弃/">while--乌龟的错误理解--抛弃</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
+        <p><span>发布时间:</span>2018年04月19日 - 20时12分</p>
+        <p><span>最后更新:</span>2018年04月23日 - 09时29分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/19/while--乌龟的错误理解--抛弃/" title="while--乌龟的错误理解--抛弃">http://sharehe.cn/2018/04/19/while--乌龟的错误理解--抛弃/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/19/while--乌龟的错误理解--抛弃/　　作者: 吾生有崖,而知无崖" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+
+<nav id="article-nav">
+  
+    <a  href="/2018/04/21/对象加载与创建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          对象加载与创建
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2018/04/19/ajax-jsonp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ajax和jsonp区别</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先上代码"><span class="toc-number">1.</span> <span class="toc-text">先上代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#揭晓谜底"><span class="toc-number">2.</span> <span class="toc-text">揭晓谜底</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2161487">
+</script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2018/04/21/对象加载与创建/" title="上一篇: 对象加载与创建">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2018/04/19/ajax-jsonp/" title="下一篇: ajax和jsonp区别">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/对象加载与创建/">对象加载与创建</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/while--乌龟的错误理解--抛弃/">while--乌龟的错误理解--抛弃</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/ajax-jsonp/">ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/hello-world/">Hello World</a></li></ul>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2018/04/19/hello-world/" class="archive-article-date">
-      <time datetime="2018-04-19T10:51:19.854Z" itemprop="datePublished">04-19</time>
-</a>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2018/04/19/hello-world/">Hello World</a>
-    </h1>
-  
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
-        <div class="article-info info-on-archive">
-          
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
@@ -520,18 +568,6 @@ ga('send', 'pageview');
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

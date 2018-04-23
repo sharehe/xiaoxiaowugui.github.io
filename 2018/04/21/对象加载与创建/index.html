@@ -7,20 +7,20 @@
   
   
   
-  <title>while | WuGui</title>
+  <title>对象加载与创建 | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="while(true);占用cpu不让出资源 ：     详解在线程中while(true);与while(true)i++;的区别">
+  <meta name="description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用 将对象的引用保存到volatile类型域或者AtomicReference对象中 将对象的引用保存到某个正确的构造对象的final类型域中 将对象的引用保存到一个由锁保护的域中  创建对象的步骤 检测类是否被加载当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息">
 <meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="while">
-<meta property="og:url" content="http://sharehe.cn/2018/04/19/while/index.html">
+<meta property="og:title" content="对象加载与创建">
+<meta property="og:url" content="http://sharehe.cn/2018/04/21/对象加载与创建/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="while(true);占用cpu不让出资源 ：     详解在线程中while(true);与while(true)i++;的区别">
+<meta property="og:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用 将对象的引用保存到volatile类型域或者AtomicReference对象中 将对象的引用保存到某个正确的构造对象的final类型域中 将对象的引用保存到一个由锁保护的域中  创建对象的步骤 检测类是否被加载当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-19T12:28:52.858Z">
+<meta property="og:updated_time" content="2018-04-23T01:30:40.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="while">
-<meta name="twitter:description" content="while(true);占用cpu不让出资源 ：     详解在线程中while(true);与while(true)i++;的区别">
+<meta name="twitter:title" content="对象加载与创建">
+<meta name="twitter:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用 将对象的引用保存到volatile类型域或者AtomicReference对象中 将对象的引用保存到某个正确的构造对象的final类型域中 将对象的引用保存到一个由锁保护的域中  创建对象的步骤 检测类是否被加载当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/http/" style="font-size: 10px;">http</a>
+                        <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/http/" style="font-size: 10px;">http</a>
                     </div>
                 </section>
                 
@@ -273,11 +273,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-while" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-对象加载与创建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/04/19/while/" class="article-date">
-      <time datetime="2018-04-19T12:12:35.000Z" itemprop="datePublished">2018-04-19</time>
+      <a  href="/2018/04/21/对象加载与创建/" class="article-date">
+      <time datetime="2018-04-21T06:26:39.000Z" itemprop="datePublished">2018-04-21</time>
 </a>
 
     </div>
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      while
+      对象加载与创建
     </h1>
   
 
@@ -301,7 +301,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/线程可见/">线程可见</a>
+    <a class="article-category-link" href="/categories/safe/">safe</a>
     </div>
 
 
@@ -317,11 +317,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> while(true);占用cpu不让出资源 ：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>    详解在线程中while(true);与while(true)i++;的区别<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h2 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用来验证多线程值同步问题</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> </span>&#123;</span><br><span class="line">    public <span class="keyword">static</span> boolean bool=<span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> synchronized <span class="keyword">void</span> get()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</span><br><span class="line">        thread_1 a=<span class="keyword">new</span> thread_1();</span><br><span class="line">        a.start();</span><br><span class="line">        thread_3 c=<span class="keyword">new</span> thread_3();</span><br><span class="line">        c.start();</span><br><span class="line">        thread_2 b=<span class="keyword">new</span> thread_2();</span><br><span class="line">        b.start();</span><br><span class="line">        System.out.println((int)<span class="string">'a'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        <span class="keyword">while</span> (MyThread.bool)&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">		System.out.println(<span class="string">"1end"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_2</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        MyThread.bool=<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_3</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        System.out.println(<span class="number">74</span>);</span><br><span class="line">        int i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (MyThread.bool)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"3end"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>打住不要往下看我们先想一想执行结果是怎样的呢 是不是1end跟2end都会打印在控制台呢，</p>
-<h2 id="揭晓谜底"><a href="#揭晓谜底" class="headerlink" title="揭晓谜底"></a>揭晓谜底</h2>
+        <h2 id="安全发布对象的四种方法"><a href="#安全发布对象的四种方法" class="headerlink" title="安全发布对象的四种方法"></a>安全发布对象的四种方法</h2><ul>
+<li>在静态初始化函数中初始化一个对象引用</li>
+<li>将对象的引用保存到volatile类型域或者AtomicReference对象中</li>
+<li>将对象的引用保存到某个正确的构造对象的final类型域中</li>
+<li>将对象的引用保存到一个由锁保护的域中</li>
+</ul>
+<h2 id="创建对象的步骤"><a href="#创建对象的步骤" class="headerlink" title="创建对象的步骤"></a>创建对象的步骤</h2><ul>
+<li><h4 id="检测类是否被加载"><a href="#检测类是否被加载" class="headerlink" title="检测类是否被加载"></a>检测类是否被加载</h4><p>当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息</p>
+</li>
+<li><h4 id="分配内存"><a href="#分配内存" class="headerlink" title="分配内存"></a>分配内存</h4></li>
+<li><h4 id="初始化对象-执行构造方法"><a href="#初始化对象-执行构造方法" class="headerlink" title="初始化对象 执行构造方法"></a>初始化对象 执行构造方法</h4></li>
+<li><h4 id="设置实例指向刚分配的内存-–与上一步可重排序"><a href="#设置实例指向刚分配的内存-–与上一步可重排序" class="headerlink" title="设置实例指向刚分配的内存 –与上一步可重排序"></a>设置实例指向刚分配的内存 –与上一步可重排序</h4></li>
+</ul>
+<h2 id="不可变对象需要满足的条件"><a href="#不可变对象需要满足的条件" class="headerlink" title="不可变对象需要满足的条件"></a>不可变对象需要满足的条件</h2><ul>
+<li>对象创建以后其状态就不能改变</li>
+<li>对象所有域都是final类型</li>
+<li>对象是正确创建的（在对象创建之间this引用没有被逸出）</li>
+</ul>
+
       
     </div>
     
@@ -329,13 +343,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/04/19/while/">while</a></p>
+        <p><span>本文标题:</span><a  href="/2018/04/21/对象加载与创建/">对象加载与创建</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
-        <p><span>发布时间:</span>2018年04月19日 - 20时12分</p>
-        <p><span>最后更新:</span>2018年04月19日 - 20时28分</p>
+        <p><span>发布时间:</span>2018年04月21日 - 14时26分</p>
+        <p><span>最后更新:</span>2018年04月23日 - 09时30分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/04/19/while/" title="while">http://sharehe.cn/2018/04/19/while/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/19/while/　　作者: 吾生有崖,而知无崖" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/21/对象加载与创建/" title="对象加载与创建">http://sharehe.cn/2018/04/21/对象加载与创建/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/21/对象加载与创建/　　作者: 吾生有崖,而知无崖" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -347,8 +361,8 @@
 <nav id="article-nav">
   
   
-    <a  href="/2018/04/19/ajax-jsonp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ajax和jsonp区别</div>
+    <a  href="/2018/04/19/while--乌龟的错误理解--抛弃/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">while--乌龟的错误理解--抛弃</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -360,7 +374,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先上代码"><span class="toc-number">1.</span> <span class="toc-text">先上代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#揭晓谜底"><span class="toc-number">2.</span> <span class="toc-text">揭晓谜底</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安全发布对象的四种方法"><span class="toc-number">1.</span> <span class="toc-text">安全发布对象的四种方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象的步骤"><span class="toc-number">2.</span> <span class="toc-text">创建对象的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#检测类是否被加载"><span class="toc-number">2.0.1.</span> <span class="toc-text">检测类是否被加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分配内存"><span class="toc-number">2.0.2.</span> <span class="toc-text">分配内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化对象-执行构造方法"><span class="toc-number">2.0.3.</span> <span class="toc-text">初始化对象 执行构造方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置实例指向刚分配的内存-–与上一步可重排序"><span class="toc-number">2.0.4.</span> <span class="toc-text">设置实例指向刚分配的内存 –与上一步可重排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不可变对象需要满足的条件"><span class="toc-number">3.</span> <span class="toc-text">不可变对象需要满足的条件</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -431,12 +445,12 @@
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/04/19/ajax-jsonp/" title="下一篇: ajax和jsonp区别">
+            <a  href="/2018/04/19/while--乌龟的错误理解--抛弃/" title="下一篇: while--乌龟的错误理解--抛弃">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/while/">while</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/ajax-jsonp/">ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/对象加载与创建/">对象加载与创建</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/while--乌龟的错误理解--抛弃/">while--乌龟的错误理解--抛弃</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/ajax-jsonp/">ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/19/hello-world/">Hello World</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
