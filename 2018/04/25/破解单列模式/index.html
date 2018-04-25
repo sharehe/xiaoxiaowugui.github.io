@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="WuGui">
 <meta property="og:description" content="本篇博文需要有java并发，类加载过程，java反射的一些知识 单列确保系统中一个类只用一个实列 单列模式提供的全局访问方法可以认为使用了简单工厂模式，简单点来说单列模式自己负责创建自己 单列模式的创建方式由于本文主要讲解如何破解单列模式，所以在这里就不详细介绍，简单的列举5种创建方式与特点  饿汉式  – 线程安全不延时加载  懒汉式 –线程不安全延时加载 –可能存在引用还没完全初始化的对象">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-25T14:35:16.277Z">
+<meta property="og:updated_time" content="2018-04-25T14:37:07.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单列模式注意事项与破解">
 <meta name="twitter:description" content="本篇博文需要有java并发，类加载过程，java反射的一些知识 单列确保系统中一个类只用一个实列 单列模式提供的全局访问方法可以认为使用了简单工厂模式，简单点来说单列模式自己负责创建自己 单列模式的创建方式由于本文主要讲解如何破解单列模式，所以在这里就不详细介绍，简单的列举5种创建方式与特点  饿汉式  – 线程安全不延时加载  懒汉式 –线程不安全延时加载 –可能存在引用还没完全初始化的对象">
@@ -327,6 +327,7 @@
 <li><p>静态内部类 –线程安全延时加载 –由于对象变量为静态变量在类加载过程中的初始化阶段虚拟机保证一个类的<clinit>()方法在多线程中被正确的加锁，同步–&gt;线程安全。–内部类在虚拟机中特性为延迟加载</clinit></p>
 </li>
 <li><p>枚举模式   –线程安全不能延时加载天然单列模式不可通过反射序列化反序列化破解</p>
+<a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 </the></li>
@@ -365,7 +366,7 @@
         <p><span>本文标题:</span><a  href="/2018/04/25/破解单列模式/">单列模式注意事项与破解</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
         <p><span>发布时间:</span>2018年04月25日 - 19时16分</p>
-        <p><span>最后更新:</span>2018年04月25日 - 22时35分</p>
+        <p><span>最后更新:</span>2018年04月25日 - 22时37分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/25/破解单列模式/" title="单列模式注意事项与破解">http://sharehe.cn/2018/04/25/破解单列模式/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/25/破解单列模式/　　作者: 吾生有崖,而知无崖" title=""></span>
