@@ -7,23 +7,24 @@
   
   
   
-  <title>WuGui</title>
+  <title>跨域带cookie问题 | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 跨域带cookie问题date: 2018-04-27 16:11:32tags: 跨域categories: http 什么是跨域​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中">
-<meta name="keywords" content="贺严锋">
+  <meta name="description" content="什么是跨域​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。">
+<meta name="keywords" content="跨域">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WuGui">
+<meta property="og:title" content="跨域带cookie问题">
 <meta property="og:url" content="http://sharehe.cn/2018/04/27/跨域带cookie问题/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="title: 跨域带cookie问题date: 2018-04-27 16:11:32tags: 跨域categories: http 什么是跨域​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中">
+<meta property="og:description" content="什么是跨域​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://sharehe.cn/img/cross/error.png">
 <meta property="og:image" content="http://sharehe.cn/img/cross/1524883405287.png">
 <meta property="og:image" content="http://sharehe.cn/img/cross/1524883865161.png">
-<meta property="og:updated_time" content="2018-04-28T03:19:10.223Z">
+<meta property="og:updated_time" content="2018-04-28T16:24:19.980Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WuGui">
-<meta name="twitter:description" content="title: 跨域带cookie问题date: 2018-04-27 16:11:32tags: 跨域categories: http 什么是跨域​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中">
-<meta name="twitter:image" content="http://sharehe.cn/img/cross/1524883405287.png">
+<meta name="twitter:title" content="跨域带cookie问题">
+<meta name="twitter:description" content="什么是跨域​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。">
+<meta name="twitter:image" content="http://sharehe.cn/img/cross/error.png">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -199,7 +200,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/gof/" style="font-size: 10px;">gof</a> <a href="/tags/http/" style="font-size: 10px;">http</a>
+                        <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/gof/" style="font-size: 10px;">gof</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
                     </div>
                 </section>
                 
@@ -280,7 +281,7 @@
   
     <div class="article-meta">
       <a  href="/2018/04/27/跨域带cookie问题/" class="article-date">
-      <time datetime="2018-04-27T08:11:32.676Z" itemprop="datePublished">2018-04-27</time>
+      <time datetime="2018-04-27T08:11:32.000Z" itemprop="datePublished">2018-04-27</time>
 </a>
 
     </div>
@@ -290,11 +291,37 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨域带cookie问题
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/http/">http</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 跨域带cookie问题<br>date: 2018-04-27 16:11:32<br>tags: 跨域<br>categories: http</p>
-<h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。</p>
+        <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。</p>
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
@@ -308,6 +335,22 @@
 </li>
 </ol>
 <h2 id="浏览器限制问题"><a href="#浏览器限制问题" class="headerlink" title="浏览器限制问题"></a>浏览器限制问题</h2><p>解决浏览器限制并不是好的方法–不可能说叫所有使用的用户都去进行浏览器设置   详细操作可看<a href="https://www.baidu.com/s?wd=允许谷歌跨域访问" target="_blank" rel="noopener">https://www.baidu.com/s?wd=允许谷歌跨域访问</a></p>
+<h2 id="使用XHR请求并跨域"><a href="#使用XHR请求并跨域" class="headerlink" title="使用XHR请求并跨域"></a>使用XHR请求并跨域</h2><p>在跨域情况下的请求是到达了后台了的，所以我们要解决跨域根源上需要后台通知浏览器我允许他的跨域请求，这时跨域问题就得以解决。所以我们需要在返回浏览器数据中添加对应的http头就可以了。我们使用filter过滤器进行对所有请求或者部分请求添加http请求头</p>
+<p>具体代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(&quot;Access-Control-Allow-Origin&quot;,&quot;*&quot;); //指定所有请求源都运行跨域请求 也可以指定自定义的url</span><br><span class="line">res.setHeader(&quot;Access-Control-Allow-Methods&quot;,&quot;*&quot;); //指定可以跨域的方法 此处表示所有方法</span><br></pre></td></tr></table></figure>
+<p>这样我们便实现了跨域问题但是这样我们有一个严重的问题就是 不能获取cookie也就是同一次的会话每次session都是不一样的。</p>
+<h2 id="获得cookie"><a href="#获得cookie" class="headerlink" title="获得cookie"></a>获得cookie</h2><p>获得cookie我们需要在HttpServletResponse中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(&quot;Access-Control-Allow-Credentials&quot;,&quot;true&quot;);</span><br></pre></td></tr></table></figure>
+<p>在前台请求中需要如下格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">					type:&quot;post&quot;,</span><br><span class="line">					url:rootPath+&quot;cookie&quot;,</span><br><span class="line">					async:true,</span><br><span class="line">					xhrFields:&#123;</span><br><span class="line">						withCredentials:true</span><br><span class="line">					&#125;,</span><br><span class="line">					success:function(data)&#123;</span><br><span class="line">						alert(data);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;);</span><br></pre></td></tr></table></figure>
+<p>注意如果添加以上http头，我们的请求源则不能设置成通配符了</p>
+<p><img src="http://sharehe.cn/img/cross/error.png" alt="error"></p>
+<p>如上所示那么难道说我们只能设置指定的请求源吗答案当然是否定的，我们在观察请求头时发现每次请求在请求头中都有Origin字段它的值便是请求源，所以我们只需要在HttpServletRequest里面取出请求的origin值在设置进返回的http头中这样就实现了相当于通配符的功能了</p>
+<p>具体操作如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest req= (HttpServletRequest) servletRequest;</span><br><span class="line">String origin= req.getHeader(&quot;origin&quot;);</span><br><span class="line">res.setHeader(&quot;Access-Control-Allow-Origin&quot;,origin);</span><br></pre></td></tr></table></figure>
+<p>这样设置后我们所有的跨域请求都能执行cookie访问了</p>
+<p>另外如果我们每次的ajax请求都去添加 xhrFields:{withCredentials:true}很麻烦的，我们可以将它同意配置即可，在配置文件中添加如下代码 这样我们就可以不用每次都配置啦</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.ajaxSetup(&#123;</span><br><span class="line">	xhrFields:&#123;</span><br><span class="line">      withCredentials:true</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="不用XHR请求–jsonp"><a href="#不用XHR请求–jsonp" class="headerlink" title="不用XHR请求–jsonp"></a>不用XHR请求–jsonp</h2><p>jsonp 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。也就是说我们请求的数据实际上为javascript数据，所以浏览器不会阻止我们的跨域请求</p>
 <p>前台请求格式如下 –使用jquery</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">		type:&quot;get&quot;,</span><br><span class="line">		url:rootPath+&quot;?name=456&quot;,// 后台接收controller为一个简单对象，里面用name属性，这里传什么参数并不影响</span><br><span class="line">		dataType:&quot;jsonp&quot;,</span><br><span class="line">		async:true,</span><br><span class="line">		success:function(data)&#123;</span><br><span class="line">				console.log(data);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure>
@@ -317,17 +360,23 @@
 <p><img src="http://sharehe.cn/img/cross/1524883405287.png" alt="1524883405287"></p>
 <p>可见能够请求并且获得返回数据 </p>
 <p><img src="http://sharehe.cn/img/cross/1524883865161.png" alt="1524883865161"></p>
-<p>在这里我们看出我们的请求不是XHR请求而是js请求 并且我们发生的参数多了两个callback与_  这里的简单的说下这两个参数的作用，callback表示的是</p>
-<p>简单请求先执行后判断 非简单请求发送两道请求</p>
-<p>   常见简单请求 get post head</p>
-<p>   请求header里面</p>
-<p>   无定义头 </p>
-<p>   Content-Type为一下几点</p>
-<p>   ​    text/plain</p>
-<p>   ​    multipart/from-data</p>
-<p>   ​    application/x-www-form-urlencoded</p>
-<p>   常见的非简单请求</p>
-<p>   put,delete方法的ajax请求 发送json格式的ajax请求（Content-Type:application/json） 带自定义头的ajax请求</p>
+<p>在这里我们看出我们的请求不是XHR请求而是js请求 并且我们发生的参数多了两个callback与_  这里的简单的说下这两个参数的作用，callback表示的是返回数据的函数名，我们说了jsonp是以js格式访问的，所以返回的数据实际上是一段js函数，函数名就是callback指定参数后面的值，该参数是jsonp的默认参数名，我们可以通过ajax参数修改在ajax函数里面添加上jsonp:”methodName”即可 同时要记得将后台中的callback与前台相对应即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@ControllerAdvice</span><br><span class="line">public class BaseController extends AbstractJsonpResponseBodyAdvice &#123;</span><br><span class="line">    public  BaseController()&#123;</span><br><span class="line">    super(&quot;methodName&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 另外虽然说后台返回的数据为js函数但是jquery已经将js函数处理了依旧转换为json格式数据，后台原本返回数据为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery19107031051372733508_1524928757925(&#123;&quot;name&quot;:&quot;456&quot;,&quot;nm&quot;:0,&quot;no&quot;:null&#125;);</span><br></pre></td></tr></table></figure>
+<p>_ 参数则为时间戳用来防止浏览器缓存–&gt;短时间类相同请求浏览器不会重复请求。</p>
+<h2 id="简单请求与非简单请求"><a href="#简单请求与非简单请求" class="headerlink" title="简单请求与非简单请求"></a>简单请求与非简单请求</h2><h4 id="简单请求先执行后判断"><a href="#简单请求先执行后判断" class="headerlink" title="简单请求先执行后判断"></a>简单请求先执行后判断</h4><p>   常见简单请求 get post head</p>
+<p>   请求header里面无自定义头 </p>
+<p>   Content-Type为以下几点</p>
+<pre><code>text/plain
+</code></pre><p>   ​    multipart/from-data</p>
+<pre><code>application/x-www-form-urlencoded
+</code></pre><h4 id="非简单请求发送两道请求"><a href="#非简单请求发送两道请求" class="headerlink" title="非简单请求发送两道请求"></a>非简单请求发送两道请求</h4><p>–&gt; 第一次发送OPTIONS方法的预检请求，用来向后台获取是否可以接受此非简单请求。</p>
+<p>   使用如下代码可告知浏览器可保存许可多长时间 单位秒 也就是说非简单请求浏览器不用每次都请求两次在允许时间类不用发生预检请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(&quot;Access-Control-Max-Age&quot;,&quot;3600&quot;);</span><br></pre></td></tr></table></figure>
+<p>在这里主要说一下 application/json的非简单请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">		type:&quot;post&quot;,</span><br><span class="line">		url:rootPath+&quot;json&quot;,</span><br><span class="line">		async:true,</span><br><span class="line">		contentType:&quot;application/json;charset=utf-8&quot;,</span><br><span class="line">		data:JSON.stringify(&#123;&quot;object&quot;:&#123;&quot;object1&quot;:&#123;&#125;&#125;&#125;),</span><br><span class="line">		success:function(data)&#123;</span><br><span class="line">			alert(data);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+<p>该请求发生的是json数据主要用于复合对象数据发送，在springmvc中接受这一类数据的形参要用@RequestBody注解表明，需要注意的是该方式发生的数据是”一个”json对象也就是最外层只能有一个对象，在对象内部可任意组合，但是要与后天接收参数结构一致，参数名一致</p>
 </the>
       
     </div>
@@ -336,12 +385,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/04/27/跨域带cookie问题/"></a></p>
+        <p><span>本文标题:</span><a  href="/2018/04/27/跨域带cookie问题/">跨域带cookie问题</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
         <p><span>发布时间:</span>2018年04月27日 - 16时11分</p>
-        <p><span>最后更新:</span>2018年04月28日 - 11时19分</p>
+        <p><span>最后更新:</span>2018年04月29日 - 00时24分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/04/27/跨域带cookie问题/" title="">http://sharehe.cn/2018/04/27/跨域带cookie问题/</a>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/27/跨域带cookie问题/" title="跨域带cookie问题">http://sharehe.cn/2018/04/27/跨域带cookie问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/27/跨域带cookie问题/　　作者: 吾生有崖,而知无崖" title=""></span>
         </p>
         <p>
@@ -367,7 +416,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是跨域"><span class="toc-number">1.</span> <span class="toc-text">什么是跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域问题产生的原因"><span class="toc-number">2.</span> <span class="toc-text">跨域问题产生的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器限制问题"><span class="toc-number">3.</span> <span class="toc-text">浏览器限制问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不用XHR请求–jsonp"><span class="toc-number">4.</span> <span class="toc-text">不用XHR请求–jsonp</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是跨域"><span class="toc-number">1.</span> <span class="toc-text">什么是跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域问题产生的原因"><span class="toc-number">2.</span> <span class="toc-text">跨域问题产生的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器限制问题"><span class="toc-number">3.</span> <span class="toc-text">浏览器限制问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用XHR请求并跨域"><span class="toc-number">4.</span> <span class="toc-text">使用XHR请求并跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获得cookie"><span class="toc-number">5.</span> <span class="toc-text">获得cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不用XHR请求–jsonp"><span class="toc-number">6.</span> <span class="toc-text">不用XHR请求–jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单请求与非简单请求"><span class="toc-number">7.</span> <span class="toc-text">简单请求与非简单请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单请求先执行后判断"><span class="toc-number">7.0.1.</span> <span class="toc-text">简单请求先执行后判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非简单请求发送两道请求"><span class="toc-number">7.0.2.</span> <span class="toc-text">非简单请求发送两道请求</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
