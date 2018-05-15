@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="WuGui">
 <meta property="og:description" content="工具包功能说明该工具包主要完成在项目内根据提供的实体类包，自动生成spring mybatis，所需要的service层接口与实现，数据库表的创建包括主键，描述，长度等的设置，数据库操作接口与对应xml文件，支持jar与maven  —&amp;gt;演示视频如下">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="d:/blog/myblog/source/img/tool/演示.gif">
-<meta property="og:updated_time" content="2018-05-15T07:40:43.593Z">
+<meta property="og:image" content="http://sharehe.cn/sharehe.cn/img/tool/演示.gif">
+<meta property="og:updated_time" content="2018-05-15T07:44:05.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssm代码自动生成工具包">
 <meta name="twitter:description" content="工具包功能说明该工具包主要完成在项目内根据提供的实体类包，自动生成spring mybatis，所需要的service层接口与实现，数据库表的创建包括主键，描述，长度等的设置，数据库操作接口与对应xml文件，支持jar与maven  —&amp;gt;演示视频如下">
-<meta name="twitter:image" content="d:/blog/myblog/source/img/tool/演示.gif">
+<meta name="twitter:image" content="http://sharehe.cn/sharehe.cn/img/tool/演示.gif">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -324,7 +324,7 @@
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<p><img src="D:\blog\myblog\source\img\tool\演示.gif" alt=""></p>
+<p><img src="http:/sharehe.cn/img/tool/演示.gif" alt=""></p>
 <h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">整个工具包的启动 需要StartRun startRun= new StartRun() </span><br><span class="line">所有的控制都是在该对象进行设置</span><br></pre></td></tr></table></figure>
 <h2 id="设置工具包功能与执行线程池"><a href="#设置工具包功能与执行线程池" class="headerlink" title="设置工具包功能与执行线程池"></a>设置工具包功能与执行线程池</h2><p>所有的功能默认为–false</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">startRun.setOpen()  //进入工具包设置</span><br><span class="line">.setScan(true)		//是否开启扫描 该扫描是扫描实体类包</span><br><span class="line">.setMapper(true)	//是否开启生成mybatis xml文件 </span><br><span class="line">.setDao(true)		//是否生成数据库操作接口</span><br><span class="line">.setService(true)	//是否生成service的接口</span><br><span class="line">.setServiceImp(true)//是否生成service的实现类  与是否生成接口没有关联</span><br><span class="line">.setThreadPool(10)	//设置线程池大小  默认为10</span><br><span class="line">.setCreateTab(true);//是否创建数据库表  若需要实现该功能需要设置数据库属性与数据库连接池等</span><br></pre></td></tr></table></figure>
@@ -345,6 +345,7 @@
 <p><a href="http://sharehe.cn/file/autoCode-1.0.2-RELEASE.jar">代码生成的jar包</a></p>
 <p><a href="http://sharehe.cn/file/mysql-connector-java-5.1.7-bin.jar">mysql连接驱动</a></p>
 <h2 id="maven坐标"><a href="#maven坐标" class="headerlink" title="maven坐标"></a>maven坐标</h2><p>是在惭愧 博主在上传到maven中央厂库的过程中出现了一些事故，目前还在解决中 所以使用maven管理项目需要自动把<a href="http://sharehe.cn/file/cn.zip">项目包</a>放入本地厂库中 maven默认的厂库位置为  C:\Users\Administrator.m2\repository</p>
+<p>坐标为下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;cn.sharehe.auto&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;auto&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;1.0.1.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></the>
       
     </div>
@@ -356,7 +357,7 @@
         <p><span>本文标题:</span><a  href="/2018/05/15/ssm代码自动生成工具包/">ssm代码自动生成工具包</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
         <p><span>发布时间:</span>2018年05月15日 - 10时44分</p>
-        <p><span>最后更新:</span>2018年05月15日 - 15时40分</p>
+        <p><span>最后更新:</span>2018年05月15日 - 15时44分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/05/15/ssm代码自动生成工具包/" title="ssm代码自动生成工具包">http://sharehe.cn/2018/05/15/ssm代码自动生成工具包/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/05/15/ssm代码自动生成工具包/　　作者: 吾生有崖,而知无崖" title=""></span>
