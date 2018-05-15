@@ -1,0 +1,154 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.fu{
+	width: 800px;
+	margin: 50px auto;
+}
+.top{
+	width: 100%;
+	height: 500px;
+	background-color: beige;
+}
+.below{
+	width: 100%;
+	height: 100px;
+	background-color: #FFEBCD;
+}
+.t_left{
+	width: 32%;
+	height: 100%;
+	position: relative;
+}
+.right{
+	width: 68%;
+	height: 100%;
+	float: right;
+	text-align: center;
+}
+.pho{
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	margin-top: 80px;
+	transition: all 1s;
+}
+
+.pho:hover{
+	border-radius: 0%;
+	transform: scaleY(1.2);
+}
+.below img{
+	width: 60px;
+	margin-top: 20px;
+	margin-left: 5px;
+	float: left;
+}
+.a_jin_name{
+	float: left;
+	width: 400px;
+	height: 60px;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+.a_name{
+	height: 29px;
+	width: 100%;
+	line-height: 29px;
+	font-size: 20px;
+}
+.a_n_n{
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+}
+.a_n_j{
+	float: right;
+	display: inline-block;
+	margin-right: 10px;
+}
+.a_jin_w{
+	height: 27px;
+	width: 400px;
+	
+	margin-top: 2px;
+	background-color: #008000;
+	position: relative;
+}
+.a_jin_n{
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 27px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	width: 0px;
+	background-color: #203C5A;
+}
+
+.a_bo{
+	margin-right: 5px;
+	position: relative;
+	float: left;
+}
+.a_bo>ul{
+	position: absolute;
+	top: -70px;
+	left: 0;
+	display: none;
+}
+.a_bo>ul>li{
+	height: 30px;
+	list-style: none;
+	cursor: pointer;
+}
+
+.a_yin{
+	float: right;
+	margin-right: 20px;
+	position: relative;
+}
+.a_yin>img{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.yink{
+	height: 100px;
+	width: 20px;
+	position: absolute;
+	top: -85px;
+	right: 20px;
+	border: solid 1px #FF3399;
+	border-bottom: 0;
+	display: none;
+}
+.yinw{
+	position: absolute;
+	width: 5px;
+	height: 100px;
+	bottom: 0;
+	right: 8px;
+	background-color: #CCCCCC;
+	z-index: 1;
+}
+.yinn{
+	position: absolute;
+	width: 5px;
+	height: 100px;
+	bottom: 0;
+	right: 0;
+	background-color: #FF3399;
+	z-index: 2;
+}
+.yinn_h{
+	position: absolute;
+	width: 20px;
+	height: 5px;
+	bottom: 95px;
+	right: -8px;
+	background-color: #FF3399;
+	z-index: 2;
+}
+
