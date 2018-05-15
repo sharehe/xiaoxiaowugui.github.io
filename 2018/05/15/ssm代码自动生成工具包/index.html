@@ -7,20 +7,22 @@
   
   
   
-  <title>对象加载与创建 | WuGui</title>
+  <title>ssm代码自动生成工具包 | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用  将对象的引用保存到volatile类型域或者AtomicReference对象中  将对象的引用保存到某个正确的构造对象的final类型域中  将对象的引用保存到一个由锁保护的域中">
-<meta name="keywords" content="JVM">
+  <meta name="description" content="工具包功能说明该工具包主要完成在项目内根据提供的实体类包，自动生成spring mybatis，所需要的service层接口与实现，数据库表的创建包括主键，描述，长度等的设置，数据库操作接口与对应xml文件，支持jar与maven  —&amp;gt;演示视频如下">
+<meta name="keywords" content="工具包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对象加载与创建">
-<meta property="og:url" content="http://sharehe.cn/2018/04/21/对象加载与创建/index.html">
+<meta property="og:title" content="ssm代码自动生成工具包">
+<meta property="og:url" content="http://sharehe.cn/2018/05/15/ssm代码自动生成工具包/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用  将对象的引用保存到volatile类型域或者AtomicReference对象中  将对象的引用保存到某个正确的构造对象的final类型域中  将对象的引用保存到一个由锁保护的域中">
+<meta property="og:description" content="工具包功能说明该工具包主要完成在项目内根据提供的实体类包，自动生成spring mybatis，所需要的service层接口与实现，数据库表的创建包括主键，描述，长度等的设置，数据库操作接口与对应xml文件，支持jar与maven  —&amp;gt;演示视频如下">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-23T01:38:20.108Z">
+<meta property="og:image" content="d:/blog/myblog/source/img/tool/演示.gif">
+<meta property="og:updated_time" content="2018-05-15T07:40:43.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对象加载与创建">
-<meta name="twitter:description" content="安全发布对象的四种方法 在静态初始化函数中初始化一个对象引用  将对象的引用保存到volatile类型域或者AtomicReference对象中  将对象的引用保存到某个正确的构造对象的final类型域中  将对象的引用保存到一个由锁保护的域中">
+<meta name="twitter:title" content="ssm代码自动生成工具包">
+<meta name="twitter:description" content="工具包功能说明该工具包主要完成在项目内根据提供的实体类包，自动生成spring mybatis，所需要的service层接口与实现，数据库表的创建包括主键，描述，长度等的设置，数据库操作接口与对应xml文件，支持jar与maven  —&amp;gt;演示视频如下">
+<meta name="twitter:image" content="d:/blog/myblog/source/img/tool/演示.gif">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -273,11 +275,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-对象加载与创建" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ssm代码自动生成工具包" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/04/21/对象加载与创建/" class="article-date">
-      <time datetime="2018-04-21T06:26:39.000Z" itemprop="datePublished">2018-04-21</time>
+      <a  href="/2018/05/15/ssm代码自动生成工具包/" class="article-date">
+      <time datetime="2018-05-15T02:44:12.000Z" itemprop="datePublished">2018-05-15</time>
 </a>
 
     </div>
@@ -291,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      对象加载与创建
+      ssm代码自动生成工具包
     </h1>
   
 
@@ -301,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/safe/">safe</a>
+    <a class="article-category-link" href="/categories/ssm-springboot/">ssm|springboot</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具包/">工具包</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,32 +319,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="安全发布对象的四种方法"><a href="#安全发布对象的四种方法" class="headerlink" title="安全发布对象的四种方法"></a>安全发布对象的四种方法</h2><ul>
-<li><p>在静态初始化函数中初始化一个对象引用</p>
-</li>
-<li><p>将对象的引用保存到volatile类型域或者AtomicReference对象中</p>
-</li>
-<li><p>将对象的引用保存到某个正确的构造对象的final类型域中</p>
-</li>
-<li><p>将对象的引用保存到一个由锁保护的域中</p>
+        <h1 id="工具包功能说明"><a href="#工具包功能说明" class="headerlink" title="工具包功能说明"></a>工具包功能说明</h1><p>该工具包主要完成在项目内根据提供的实体类包，自动生成spring mybatis，所需要的service层接口与实现，数据库表的创建包括主键，描述，长度等的设置，数据库操作接口与对应xml文件，支持jar与maven </p>
+<p>—&gt;演示视频如下</p>
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-</the></li>
-</ul>
-<h2 id="创建对象的步骤"><a href="#创建对象的步骤" class="headerlink" title="创建对象的步骤"></a>创建对象的步骤</h2><ul>
-<li><h4 id="检测类是否被加载"><a href="#检测类是否被加载" class="headerlink" title="检测类是否被加载"></a>检测类是否被加载</h4><p>当虚拟机运行到new操作时，会到常量池中寻找该类的符号，若没有则需要调用类加载器加载类，加载后存入方法区–存放已加载的类信息</p>
-</li>
-<li><h4 id="分配内存"><a href="#分配内存" class="headerlink" title="分配内存"></a>分配内存</h4></li>
-<li><h4 id="初始化对象-执行构造方法"><a href="#初始化对象-执行构造方法" class="headerlink" title="初始化对象 执行构造方法"></a>初始化对象 执行构造方法</h4></li>
-<li><h4 id="设置实例指向刚分配的内存-–与上一步可重排序"><a href="#设置实例指向刚分配的内存-–与上一步可重排序" class="headerlink" title="设置实例指向刚分配的内存 –与上一步可重排序"></a>设置实例指向刚分配的内存 –与上一步可重排序</h4></li>
-</ul>
-<h2 id="不可变对象需要满足的条件"><a href="#不可变对象需要满足的条件" class="headerlink" title="不可变对象需要满足的条件"></a>不可变对象需要满足的条件</h2><ul>
-<li>对象创建以后其状态就不能改变</li>
-<li>对象所有域都是final类型</li>
-<li>对象是正确创建的（在对象创建之间this引用没有被逸出）</li>
-</ul>
-
+<p><img src="D:\blog\myblog\source\img\tool\演示.gif" alt=""></p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">整个工具包的启动 需要StartRun startRun= new StartRun() </span><br><span class="line">所有的控制都是在该对象进行设置</span><br></pre></td></tr></table></figure>
+<h2 id="设置工具包功能与执行线程池"><a href="#设置工具包功能与执行线程池" class="headerlink" title="设置工具包功能与执行线程池"></a>设置工具包功能与执行线程池</h2><p>所有的功能默认为–false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">startRun.setOpen()  //进入工具包设置</span><br><span class="line">.setScan(true)		//是否开启扫描 该扫描是扫描实体类包</span><br><span class="line">.setMapper(true)	//是否开启生成mybatis xml文件 </span><br><span class="line">.setDao(true)		//是否生成数据库操作接口</span><br><span class="line">.setService(true)	//是否生成service的接口</span><br><span class="line">.setServiceImp(true)//是否生成service的实现类  与是否生成接口没有关联</span><br><span class="line">.setThreadPool(10)	//设置线程池大小  默认为10</span><br><span class="line">.setCreateTab(true);//是否创建数据库表  若需要实现该功能需要设置数据库属性与数据库连接池等</span><br></pre></td></tr></table></figure>
+<h2 id="设置生成代码的对应位置"><a href="#设置生成代码的对应位置" class="headerlink" title="设置生成代码的对应位置"></a>设置生成代码的对应位置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">startRun.setRootPath(&quot;D:/IdeaYuanma1/automatic&quot;);	//设置项目源代码位置  系统第一次运行会输出编译文件地址一般源码地址都为其父地址中的某一目录  另外该地址为绝对地址</span><br><span class="line"></span><br><span class="line">startRun.setPageName()		 // 进入包名的设置</span><br><span class="line">		.setRootPackage(&quot;cn.wugui.automatic.&quot;)  //设置所有包的父包 没有为空 注意注意最后要有一个点</span><br><span class="line">		.setBeans(&quot;beans&quot;)		// 设置实体类的包名 所有生成代码都根据该包下的实体类生成</span><br><span class="line">		.setMapper(&quot;&quot;)// 该设置为mybatis xml的生成位置 如果为maven项目建议不设置该属性 注意是不设置，不是设置为空</span><br><span class="line">		.setMiddleMapp(&quot;&quot;)	// maven建议不用设置，没使用maven建议设置为&quot;src&quot;</span><br><span class="line">		.setMiddle(&quot;&quot;)		//  maven建议不用设置，没使用maven建议设置为&quot;src&quot;</span><br><span class="line">		.setDao(&quot;dao&quot;)			// 设置dao接口的父包</span><br><span class="line">		.setService(&quot;service&quot;)		// 设置service接口父包</span><br><span class="line">		.setServiceImp(&quot;service.imp&quot;);	//设置service实现类父包</span><br></pre></td></tr></table></figure>
+<h2 id="设置类名格式与方法格式"><a href="#设置类名格式与方法格式" class="headerlink" title="设置类名格式与方法格式"></a>设置类名格式与方法格式</h2><p>在设置格式中 存在{}符号 该符号表示生成的文件名将替换为实体类的类名</p>
+<p>在下面的配置中的值为默认值 若相同则可以不用设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">startRun.setClassFormat(ClassNameConfigure.DAO,&quot;&#123;&#125;Dao.java&quot;)// dao的类名格式</span><br><span class="line">        .setClassFormat(ClassNameConfigure.SERVICE,&quot;I&#123;&#125;Service.java&quot;)  //service接口的类名格式</span><br><span class="line">        .setClassFormat(ClassNameConfigure.SERVICEIMP,&quot;&#123;&#125;ServiceImp.java&quot;) //servoce实现的类格式</span><br><span class="line">        .setClassFormat(ClassNameConfigure.MAPPER,&quot;&#123;&#125;Mapper.xml&quot;);		//mybatis 文件名格式</span><br><span class="line">        </span><br><span class="line">        //注意文件后缀</span><br></pre></td></tr></table></figure>
+<h2 id="设置方法名格式"><a href="#设置方法名格式" class="headerlink" title="设置方法名格式"></a>设置方法名格式</h2><p>该功能中 xml会根据方法中最后一个参数生成对应的parameterType</p>
+<p>在方法格式中出现//字符表示未该方法写的注释 /这里写注释/</p>
+<p>在下面的配置中的值为默认值 若相同则可以不用设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">startRun.setMethodFormat(MethodNameConfigure.SELECTALL,&quot;/查询全部数据/ public List&lt;&#123;&#125;&gt; qry&#123;&#125;All(&#123;&#125; data)&quot;) </span><br><span class="line">        .setMethodFormat(MethodNameConfigure.DELETE,&quot;/删除数据/ public boolean del&#123;&#125;(String id)&quot;)</span><br><span class="line">        .setMethodFormat(MethodNameConfigure.INSERT,&quot;/添加数据/ public boolean add&#123;&#125;(&#123;&#125; data)&quot;)</span><br><span class="line">        .setMethodFormat(MethodNameConfigure.SELECTBYID,&quot;/根据id查询一条数据/ public &#123;&#125; qry&#123;&#125;ById(String id)&quot;)</span><br><span class="line">        .setMethodFormat(MethodNameConfigure.UPDATE,&quot;/更新数据/ public boolean edit&#123;&#125;(&#123;&#125; data)&quot;)</span><br><span class="line">        .setMethodFormat(20,&quot;&quot;); //可以设置自己的方法 但是导入到xml中的方法只有以上5个方法</span><br></pre></td></tr></table></figure>
+<h2 id="设置数据库连接属性"><a href="#设置数据库连接属性" class="headerlink" title="设置数据库连接属性"></a>设置数据库连接属性</h2><p>若开启了数据库表的创建则需要设置一下属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">startRun.setJdbcField()</span><br><span class="line">		.setConcurrencyPool(5)   //设置数据库连接词</span><br><span class="line">		.setUrl(&quot;jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&quot;)  //url</span><br><span class="line">		.setUser(&quot;user&quot;)		//用户名</span><br><span class="line">		.setPassword(&quot;pass&quot;);		//密码</span><br></pre></td></tr></table></figure>
+<p>设置java数据类型与mysql数据类型对象关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">startRun.setTypeJavaToSql(&quot;String&quot;,&quot;varchar&quot;) //前面为java数据类型后面为mysql数据类型</span><br><span class="line">		.setTypeJavaToSql(&quot;&quot;,&quot;&quot;)</span><br><span class="line">		</span><br><span class="line">以下为默认对应关系</span><br><span class="line"></span><br><span class="line">		TYPEMAP.put(&quot;String&quot;, &quot;VARCHAR&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;byte&quot;, &quot;BLOB&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;Long&quot;, &quot;INTEGER&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;Integer&quot;, &quot;int&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;Boolean&quot;, &quot;BIT&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;Float&quot;, &quot;FLOAT&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;Double&quot;, &quot;DOUBLE&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;float&quot;, &quot;FLOAT&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;double&quot;, &quot;DOUBLE&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;int&quot;, &quot;INT&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;boolean&quot;, &quot;INT&quot;);</span><br><span class="line">        TYPEMAP.put(&quot;long&quot;, &quot;INT&quot;);</span><br></pre></td></tr></table></figure>
+<h2 id="开启导入"><a href="#开启导入" class="headerlink" title="开启导入"></a>开启导入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start.run();</span><br></pre></td></tr></table></figure>
+<h2 id="jar包下载地址"><a href="#jar包下载地址" class="headerlink" title="jar包下载地址"></a>jar包下载地址</h2><p>该jar包需要依赖mysql–connector</p>
+<p><a href="http://sharehe.cn/file/autoCode-1.0.2-RELEASE.jar">代码生成的jar包</a></p>
+<p><a href="http://sharehe.cn/file/mysql-connector-java-5.1.7-bin.jar">mysql连接驱动</a></p>
+<h2 id="maven坐标"><a href="#maven坐标" class="headerlink" title="maven坐标"></a>maven坐标</h2><p>是在惭愧 博主在上传到maven中央厂库的过程中出现了一些事故，目前还在解决中 所以使用maven管理项目需要自动把<a href="http://sharehe.cn/file/cn.zip">项目包</a>放入本地厂库中 maven默认的厂库位置为  C:\Users\Administrator.m2\repository</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;cn.sharehe.auto&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;auto&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;1.0.1.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></the>
       
     </div>
     
@@ -350,13 +353,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/04/21/对象加载与创建/">对象加载与创建</a></p>
+        <p><span>本文标题:</span><a  href="/2018/05/15/ssm代码自动生成工具包/">ssm代码自动生成工具包</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
-        <p><span>发布时间:</span>2018年04月21日 - 14时26分</p>
-        <p><span>最后更新:</span>2018年04月23日 - 09时38分</p>
+        <p><span>发布时间:</span>2018年05月15日 - 10时44分</p>
+        <p><span>最后更新:</span>2018年05月15日 - 15时40分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/04/21/对象加载与创建/" title="对象加载与创建">http://sharehe.cn/2018/04/21/对象加载与创建/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/21/对象加载与创建/　　作者: 吾生有崖,而知无崖" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/15/ssm代码自动生成工具包/" title="ssm代码自动生成工具包">http://sharehe.cn/2018/05/15/ssm代码自动生成工具包/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/05/15/ssm代码自动生成工具包/　　作者: 吾生有崖,而知无崖" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -367,18 +370,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/04/25/破解单列模式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          单列模式注意事项与破解
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/04/19/while--乌龟的错误理解--抛弃/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">while--乌龟的错误理解--抛弃</div>
+    <a  href="/2018/05/12/mysql索引/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql索引</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -390,7 +384,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安全发布对象的四种方法"><span class="toc-number">1.</span> <span class="toc-text">安全发布对象的四种方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象的步骤"><span class="toc-number">2.</span> <span class="toc-text">创建对象的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#检测类是否被加载"><span class="toc-number">2.0.1.</span> <span class="toc-text">检测类是否被加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分配内存"><span class="toc-number">2.0.2.</span> <span class="toc-text">分配内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化对象-执行构造方法"><span class="toc-number">2.0.3.</span> <span class="toc-text">初始化对象 执行构造方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置实例指向刚分配的内存-–与上一步可重排序"><span class="toc-number">2.0.4.</span> <span class="toc-text">设置实例指向刚分配的内存 –与上一步可重排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不可变对象需要满足的条件"><span class="toc-number">3.</span> <span class="toc-text">不可变对象需要满足的条件</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#工具包功能说明"><span class="toc-number">1.</span> <span class="toc-text">工具包功能说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始使用"><span class="toc-number">1.1.</span> <span class="toc-text">开始使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置工具包功能与执行线程池"><span class="toc-number">1.2.</span> <span class="toc-text">设置工具包功能与执行线程池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置生成代码的对应位置"><span class="toc-number">1.3.</span> <span class="toc-text">设置生成代码的对应位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置类名格式与方法格式"><span class="toc-number">1.4.</span> <span class="toc-text">设置类名格式与方法格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置方法名格式"><span class="toc-number">1.5.</span> <span class="toc-text">设置方法名格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置数据库连接属性"><span class="toc-number">1.6.</span> <span class="toc-text">设置数据库连接属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启导入"><span class="toc-number">1.7.</span> <span class="toc-text">开启导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jar包下载地址"><span class="toc-number">1.8.</span> <span class="toc-text">jar包下载地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maven坐标"><span class="toc-number">1.9.</span> <span class="toc-text">maven坐标</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -457,13 +451,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/04/25/破解单列模式/" title="上一篇: 单列模式注意事项与破解">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/04/19/while--乌龟的错误理解--抛弃/" title="下一篇: while--乌龟的错误理解--抛弃">
+            <a  href="/2018/05/12/mysql索引/" title="下一篇: mysql索引">
                 <i class="fa fa-angle-right"></i>
             </a>
         
