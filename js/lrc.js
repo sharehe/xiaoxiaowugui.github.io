@@ -101,8 +101,8 @@ var muma='[00:02.81]牧马少年'+
 '[03:38.41]他的身影已占据我的心田'+
 '[03:43.88]他何时能与我敖包相见'+
 '[03:47.45]我眷恋他就像羊儿眷恋草原';
-
+var path='123.207.78.228:9988/exam/myblog/';
 var mp3src=new Array();
-mp3src[0]="resources/曹轩宾 - 你不在北京.mp3"
-mp3src[1]="resources/体面-于文文.mp3"
-mp3src[2]="resources/包师语 - 安和桥.mp3"
+mp3src[0]=path+"曹轩宾 - 你不在北京.mp3"
+mp3src[1]=path+"体面-于文文.mp3"
+mp3src[2]=path+"包师语 - 安和桥.mp3"
