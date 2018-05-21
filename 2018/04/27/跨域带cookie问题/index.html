@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://sharehe.cn/img/cross/error.png">
 <meta property="og:image" content="http://sharehe.cn/img/cross/1524883405287.png">
 <meta property="og:image" content="http://sharehe.cn/img/cross/1524883865161.png">
-<meta property="og:updated_time" content="2018-04-28T16:41:42.331Z">
+<meta property="og:updated_time" content="2018-05-21T08:01:39.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域带cookie问题">
 <meta name="twitter:description" content="什么是跨域​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。">
@@ -335,8 +335,10 @@
 </li>
 </ol>
 <h2 id="浏览器限制问题"><a href="#浏览器限制问题" class="headerlink" title="浏览器限制问题"></a>浏览器限制问题</h2><p>解决浏览器限制并不是好的方法–不可能说叫所有使用的用户都去进行浏览器设置   详细操作可看<a href="https://www.baidu.com/s?wd=允许谷歌跨域访问" target="_blank" rel="noopener">https://www.baidu.com/s?wd=允许谷歌跨域访问</a></p>
+<h2 id="springmvc框架的语法糖"><a href="#springmvc框架的语法糖" class="headerlink" title="springmvc框架的语法糖"></a>springmvc框架的语法糖</h2><p>若你使用的是springmvc框架 那真是太幸运了 为什么了因为该框架为我们提供了一个注解我们只需要在controller中添加一个注解@CrossOrigin（作用于类与方法）就可以解决跨域的一系列问题啦</p>
+<p>如果你是初次使用，建议还是详细看看下面的讲解，我们不能依赖于框架，如果哪天换了一个框架，岂不是两眼一抹黑，不知道该如何是好了呀</p>
 <h2 id="使用XHR请求并跨域"><a href="#使用XHR请求并跨域" class="headerlink" title="使用XHR请求并跨域"></a>使用XHR请求并跨域</h2><p>在跨域情况下的请求是到达了后台了的，所以我们要解决跨域根源上需要后台通知浏览器我允许他的跨域请求，这时跨域问题就得以解决。所以我们需要在返回浏览器数据中添加对应的http头就可以了。我们使用filter过滤器进行对所有请求或者部分请求添加http请求头</p>
-<p>具体代码如下</p>
+<p>过滤器中添加具体代码如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(&quot;Access-Control-Allow-Origin&quot;,&quot;*&quot;); //指定所有请求源都运行跨域请求 也可以指定自定义的url</span><br><span class="line">res.setHeader(&quot;Access-Control-Allow-Methods&quot;,&quot;*&quot;); //指定可以跨域的方法 此处表示所有方法</span><br></pre></td></tr></table></figure>
 <p>这样我们便实现了跨域问题但是这样我们有一个严重的问题就是 不能获取cookie也就是同一次的会话每次session都是不一样的。</p>
 <h2 id="获得cookie"><a href="#获得cookie" class="headerlink" title="获得cookie"></a>获得cookie</h2><p>获得cookie我们需要在HttpServletResponse中添加</p>
@@ -388,7 +390,7 @@
         <p><span>本文标题:</span><a  href="/2018/04/27/跨域带cookie问题/">跨域带cookie问题</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
         <p><span>发布时间:</span>2018年04月27日 - 16时11分</p>
-        <p><span>最后更新:</span>2018年04月29日 - 00时41分</p>
+        <p><span>最后更新:</span>2018年05月21日 - 16时01分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/27/跨域带cookie问题/" title="跨域带cookie问题">http://sharehe.cn/2018/04/27/跨域带cookie问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/04/27/跨域带cookie问题/　　作者: 吾生有崖,而知无崖" title=""></span>
@@ -425,7 +427,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是跨域"><span class="toc-number">1.</span> <span class="toc-text">什么是跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域问题产生的原因"><span class="toc-number">2.</span> <span class="toc-text">跨域问题产生的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器限制问题"><span class="toc-number">3.</span> <span class="toc-text">浏览器限制问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用XHR请求并跨域"><span class="toc-number">4.</span> <span class="toc-text">使用XHR请求并跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获得cookie"><span class="toc-number">5.</span> <span class="toc-text">获得cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不用XHR请求–jsonp"><span class="toc-number">6.</span> <span class="toc-text">不用XHR请求–jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单请求与非简单请求"><span class="toc-number">7.</span> <span class="toc-text">简单请求与非简单请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单请求先执行后判断"><span class="toc-number">7.0.1.</span> <span class="toc-text">简单请求先执行后判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非简单请求发送两道请求"><span class="toc-number">7.0.2.</span> <span class="toc-text">非简单请求发送两道请求</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是跨域"><span class="toc-number">1.</span> <span class="toc-text">什么是跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域问题产生的原因"><span class="toc-number">2.</span> <span class="toc-text">跨域问题产生的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器限制问题"><span class="toc-number">3.</span> <span class="toc-text">浏览器限制问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#springmvc框架的语法糖"><span class="toc-number">4.</span> <span class="toc-text">springmvc框架的语法糖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用XHR请求并跨域"><span class="toc-number">5.</span> <span class="toc-text">使用XHR请求并跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获得cookie"><span class="toc-number">6.</span> <span class="toc-text">获得cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不用XHR请求–jsonp"><span class="toc-number">7.</span> <span class="toc-text">不用XHR请求–jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单请求与非简单请求"><span class="toc-number">8.</span> <span class="toc-text">简单请求与非简单请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单请求先执行后判断"><span class="toc-number">8.0.1.</span> <span class="toc-text">简单请求先执行后判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非简单请求发送两道请求"><span class="toc-number">8.0.2.</span> <span class="toc-text">非简单请求发送两道请求</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
