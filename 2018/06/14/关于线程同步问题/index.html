@@ -7,20 +7,20 @@
   
   
   
-  <title>maven-pom与依赖说明 | WuGui</title>
+  <title>关于线程值同步问题 | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​    在把自己的jar提供到中央厂库的时候发现自己对maven认识还不足够，于是便再一次详细看了一篇，一门技术当你不懂的时候学习的过程是很快的，当你了解了一些，再学习的过程便会变慢，这便是高中老师经常说的书会越读越后最后变薄的过程吧">
-<meta name="keywords" content="学习笔记">
+  <meta name="description" content="关于多线程中的while(true)这个问题困扰了我很久，在今天终于豁然开朗。下面主要讲解多个线程中共同使用全局静态boolean变量其中一个线程改变其状态，观看其他线程是否跳出while()循环">
+<meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven-pom与依赖说明">
-<meta property="og:url" content="http://sharehe.cn/2018/05/09/maven-pom说明/index.html">
+<meta property="og:title" content="关于线程值同步问题">
+<meta property="og:url" content="http://sharehe.cn/2018/06/14/关于线程同步问题/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="​    在把自己的jar提供到中央厂库的时候发现自己对maven认识还不足够，于是便再一次详细看了一篇，一门技术当你不懂的时候学习的过程是很快的，当你了解了一些，再学习的过程便会变慢，这便是高中老师经常说的书会越读越后最后变薄的过程吧">
+<meta property="og:description" content="关于多线程中的while(true)这个问题困扰了我很久，在今天终于豁然开朗。下面主要讲解多个线程中共同使用全局静态boolean变量其中一个线程改变其状态，观看其他线程是否跳出while()循环">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-10T04:36:30.370Z">
+<meta property="og:updated_time" content="2018-06-14T04:00:43.742Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven-pom与依赖说明">
-<meta name="twitter:description" content="​    在把自己的jar提供到中央厂库的时候发现自己对maven认识还不足够，于是便再一次详细看了一篇，一门技术当你不懂的时候学习的过程是很快的，当你了解了一些，再学习的过程便会变慢，这便是高中老师经常说的书会越读越后最后变薄的过程吧">
+<meta name="twitter:title" content="关于线程值同步问题">
+<meta name="twitter:description" content="关于多线程中的while(true)这个问题困扰了我很久，在今天终于豁然开朗。下面主要讲解多个线程中共同使用全局静态boolean变量其中一个线程改变其状态，观看其他线程是否跳出while()循环">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -273,11 +273,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-maven-pom说明" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-关于线程同步问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/05/09/maven-pom说明/" class="article-date">
-      <time datetime="2018-05-09T14:36:55.000Z" itemprop="datePublished">2018-05-09</time>
+      <a  href="/2018/06/14/关于线程同步问题/" class="article-date">
+      <time datetime="2018-06-14T03:12:35.000Z" itemprop="datePublished">2018-06-14</time>
 </a>
 
     </div>
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      maven-pom与依赖说明
+      关于线程值同步问题
     </h1>
   
 
@@ -300,10 +300,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/线程可见/">线程可见</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -313,11 +317,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>​    在把自己的jar提供到中央厂库的时候发现自己对maven认识还不足够，于是便再一次详细看了一篇，一门技术当你不懂的时候学习的过程是很快的，当你了解了一些，再学习的过程便会变慢，这便是高中老师经常说的书会越读越后最后变薄的过程吧</p>
+        <p>关于多线程中的while(true)这个问题困扰了我很久，在今天终于豁然开朗。下面主要讲解多个线程中共同使用全局静态boolean变量其中一个线程改变其状态，观看其他线程是否跳出while()循环</p>
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h2 id="依赖说明"><a href="#依赖说明" class="headerlink" title="依赖说明"></a>依赖说明</h2><h2 id="pom-xml说明"><a href="#pom-xml说明" class="headerlink" title="pom.xml说明"></a>pom.xml说明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"></span><br><span class="line">  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--指定单签pom版本 必须--&gt;</span><br><span class="line">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;!--坐标--&gt;</span><br><span class="line">	&lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">		snapshot 快照</span><br><span class="line">		alpha 内侧测试版本</span><br><span class="line">		beta 公测版本</span><br><span class="line">		release 稳定版本</span><br><span class="line">		ga 正式发布版本</span><br><span class="line">		--版本均用大写</span><br><span class="line">		如 1.0.1RELEASE</span><br><span class="line">	--&gt;</span><br><span class="line">	&lt;version&gt;&lt;/version&gt;</span><br><span class="line">	&lt;!--打包方式 默认jar  --&gt;</span><br><span class="line">	&lt;packaging&gt;  &lt;/packaging&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!--项目描述名--&gt;</span><br><span class="line">	&lt;name&gt;&lt;/name&gt;</span><br><span class="line">	&lt;!--项目地址--&gt;</span><br><span class="line">	&lt;url&gt;&lt;/url&gt;</span><br><span class="line">	&lt;!--项目描述--&gt;</span><br><span class="line">	&lt;description&gt;&lt;/description&gt;</span><br><span class="line">	&lt;!--开发成员列表 信息--&gt;</span><br><span class="line">	&lt;developers&gt;&lt;/developers&gt;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;&lt;/version&gt;</span><br><span class="line">			&lt;type&gt;&lt;/type&gt;</span><br><span class="line">			&lt;!--依赖范围--&gt;</span><br><span class="line">			&lt;scope&gt;&lt;/scope&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;!--设置依赖是否可选  默认为false 默认继承  true必须显示引入依赖--&gt;</span><br><span class="line">			&lt;optional&gt;&lt;/optional&gt;</span><br><span class="line">			&lt;!--排除依赖传递列表--&gt;</span><br><span class="line">			&lt;exclusions&gt;</span><br><span class="line">				&lt;exclusion&gt;</span><br><span class="line">					&lt;!--坐标--&gt;</span><br><span class="line">				&lt;/exclusion&gt;</span><br><span class="line">			&lt;/exclusions&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">	&lt;!--依赖管理 不会运行不引入依赖 定义在父模块中 --&gt;</span><br><span class="line">	&lt;dependencyManagement&gt;</span><br><span class="line">		&lt;!--依赖列表--&gt;</span><br><span class="line">	&lt;/dependencyManagement&gt;</span><br><span class="line">	&lt;!--为构建行为提供支持 --&gt;</span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;!--插件列表--&gt;</span><br><span class="line">		&lt;plugins&gt;</span><br><span class="line">			&lt;plugin&gt;</span><br><span class="line">				&lt;!--坐标--&gt;</span><br><span class="line">			&lt;/plugin&gt;</span><br><span class="line">		&lt;/plugins&gt;</span><br><span class="line">	&lt;/build&gt;</span><br><span class="line">	&lt;!--子模块继承父模块--&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;!-- 聚合运行多个maven模块编译 --&gt;</span><br><span class="line">	&lt;modules&gt;</span><br><span class="line">		&lt;module&gt;&lt;/module&gt;</span><br><span class="line">	&lt;/modules&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用来验证多线程值同步问题</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> </span>&#123;</span><br><span class="line">    public <span class="keyword">static</span> boolean bool=<span class="literal">true</span>;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</span><br><span class="line">        thread_1 a=<span class="keyword">new</span> thread_1();</span><br><span class="line">        a.start();</span><br><span class="line">        thread_3 c=<span class="keyword">new</span> thread_3();</span><br><span class="line">        c.start();</span><br><span class="line">        thread_2 b=<span class="keyword">new</span> thread_2();</span><br><span class="line">        b.start();</span><br><span class="line">        System.out.println((int)<span class="string">'a'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_1</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        <span class="keyword">while</span> (MyThread.bool)&#123;</span><br><span class="line">        &#125;</span><br><span class="line">		System.out.println(<span class="string">"1end"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_2</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        MyThread.bool=<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">thread_3</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="keyword">void</span> run() &#123;</span><br><span class="line">        System.out.println(<span class="number">74</span>);</span><br><span class="line">        <span class="keyword">while</span> (MyThread.bool)&#123;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"3end"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码我们开启了三个线程，在线程二中我们改变了bool的值使其变为false 线程一与线程三分别在while(boo);</p>
+<p>打住不要往下看我们先想一想执行结果是怎样的呢 是不是1end跟3end都会打印在控制台呢，</p>
+<h2 id="揭晓谜底"><a href="#揭晓谜底" class="headerlink" title="揭晓谜底"></a>揭晓谜底</h2><p>实际上并没有在控制台打印出13end 这是为什么呢，java内存模型（Java Memory Model 简称JMM)中提到线程之间的共享变量存储在主内存中，每个线程都有一个私有的本地内存，本地内存中存储的是该线程读写主内存共享变量的副本。因为我们未加同步手段所以以上代码将会被编译器优化为以下代码片段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread &#123;</span><br><span class="line">    public static boolean bool=true;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        thread_1 a=new thread_1();</span><br><span class="line">        a.start();</span><br><span class="line">        thread_3 c=new thread_3();</span><br><span class="line">        c.start();</span><br><span class="line">        thread_2 b=new thread_2();</span><br><span class="line">        b.start();</span><br><span class="line">        System.out.println((int)&apos;a&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class thread_1 extends Thread&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">       if(MyThread.bool)&#123;</span><br><span class="line">           while (true)&#123;</span><br><span class="line">        &#125;  </span><br><span class="line">        &#125;</span><br><span class="line">		System.out.println(&quot;1end&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class thread_2 extends Thread&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (int i = 0; i &lt; 1000; i++) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        MyThread.bool=false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class thread_3 extends Thread&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(74);</span><br><span class="line">        if(MyThread.bool)&#123;</span><br><span class="line">           while (true)&#123;</span><br><span class="line">        &#125;  </span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;3end&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>发现哪里不一样了吗，之前的while(MyThread.bool)被改变成了if(MyThread.bool){while (true) }，这是由于编译优化做的改动，为什么会这样改动呢，因为我们并未对MyThread.bool做任何同步操作，所以在线程1线程3中对于变量MyThread.bool取值就在工作内存中取得，由于该线程未对bool变量这任何状态改变，所以编译器会认为该值的状态就不会被改变了。</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>引起该问题发送并不是我们未加同步手段导致线程2对共享变量bool值的改变不会被线程1与3发现，这点在JMM中也有提到，只是线程之间的状态统一不是同步发生的，这一点也是线程不安全的由来。</p>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><p>这里最简单的解决方法就是把bool设置为public static volatile boolean bool=true;   重点是volatile关键字，该关键字表示线程每次对变量bool的读取都需要同步主内存中的值，所以就会使线程中的while不会被编译器优化。那么改变bool = false;便会使线程1与线程3及时停止。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>volatile关键字并不会保证线程安全，该关键字只保证每次读取变量是会同步工作内存与主内存中的值，但是如果存在多个线程同时改变volatile关键字的值就会导致线程不安全。</p>
 </the>
       
     </div>
@@ -326,13 +338,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/05/09/maven-pom说明/">maven-pom与依赖说明</a></p>
+        <p><span>本文标题:</span><a  href="/2018/06/14/关于线程同步问题/">关于线程值同步问题</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
-        <p><span>发布时间:</span>2018年05月09日 - 22时36分</p>
-        <p><span>最后更新:</span>2018年05月10日 - 12时36分</p>
+        <p><span>发布时间:</span>2018年06月14日 - 11时12分</p>
+        <p><span>最后更新:</span>2018年06月14日 - 12时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/09/maven-pom说明/" title="maven-pom与依赖说明">http://sharehe.cn/2018/05/09/maven-pom说明/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/05/09/maven-pom说明/　　作者: 吾生有崖,而知无崖" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/14/关于线程同步问题/" title="关于线程值同步问题">http://sharehe.cn/2018/06/14/关于线程同步问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/06/14/关于线程同步问题/　　作者: 吾生有崖,而知无崖" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -343,18 +355,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/05/12/mysql索引/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          mysql索引
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/04/27/跨域带cookie问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">跨域带cookie问题</div>
+    <a  href="/2018/06/04/springBootWebSocket/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springBootWebSocket</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -366,7 +369,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖说明"><span class="toc-number">1.</span> <span class="toc-text">依赖说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pom-xml说明"><span class="toc-number">2.</span> <span class="toc-text">pom.xml说明</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先上代码"><span class="toc-number">1.</span> <span class="toc-text">先上代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#揭晓谜底"><span class="toc-number">2.</span> <span class="toc-text">揭晓谜底</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解"><span class="toc-number">3.</span> <span class="toc-text">理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决"><span class="toc-number">4.</span> <span class="toc-text">如何解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意"><span class="toc-number">5.</span> <span class="toc-text">注意</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -433,13 +436,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/05/12/mysql索引/" title="上一篇: mysql索引">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/04/27/跨域带cookie问题/" title="下一篇: 跨域带cookie问题">
+            <a  href="/2018/06/04/springBootWebSocket/" title="下一篇: springBootWebSocket">
                 <i class="fa fa-angle-right"></i>
             </a>
         
