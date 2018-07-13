@@ -7,20 +7,20 @@
   
   
   
-  <title>about | WuGui</title>
+  <title>&#39;EnableCaching&#39; | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人简介山无棱天地和乃敢于码绝。我是奋斗在编码一线的程序猿。非常庆幸与软件工程专业相遇，希望未来的自己指尖敲出的符号不是为了生活，而是梦想。 本博客的目的好记性不如烂笔头，曾经写出的那些令自己兴奋许久的代码，自己已经遗失了很多。不甘心不高兴，现在大三的我希望通过这个博客记录自己的学习心得，总结一下我的技巧，在此立一个flag以后凡是自己觉得有意义值得记录的知识，bug，坑等，乌龟将一一编写博文记录">
-<meta name="keywords" content="贺严锋">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://sharehe.cn/about/index.html">
+  <meta name="description" content="redis缓存本篇博客为博主学习springboot中使用redis缓存的一些笔记 依赖问题在springboot中使用redis作为缓存需引入以下依赖 1234&amp;lt;dependency&amp;gt;	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;	&amp;lt;artifactId&amp;gt;spring-boot-starter-data-r">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;EnableCaching&#39;">
+<meta property="og:url" content="http://sharehe.cn/2018/07/13/EnableCaching/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="个人简介山无棱天地和乃敢于码绝。我是奋斗在编码一线的程序猿。非常庆幸与软件工程专业相遇，希望未来的自己指尖敲出的符号不是为了生活，而是梦想。 本博客的目的好记性不如烂笔头，曾经写出的那些令自己兴奋许久的代码，自己已经遗失了很多。不甘心不高兴，现在大三的我希望通过这个博客记录自己的学习心得，总结一下我的技巧，在此立一个flag以后凡是自己觉得有意义值得记录的知识，bug，坑等，乌龟将一一编写博文记录">
+<meta property="og:description" content="redis缓存本篇博客为博主学习springboot中使用redis缓存的一些笔记 依赖问题在springboot中使用redis作为缓存需引入以下依赖 1234&amp;lt;dependency&amp;gt;	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;	&amp;lt;artifactId&amp;gt;spring-boot-starter-data-r">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-02T14:08:26.332Z">
+<meta property="og:updated_time" content="2018-07-13T14:41:32.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="个人简介山无棱天地和乃敢于码绝。我是奋斗在编码一线的程序猿。非常庆幸与软件工程专业相遇，希望未来的自己指尖敲出的符号不是为了生活，而是梦想。 本博客的目的好记性不如烂笔头，曾经写出的那些令自己兴奋许久的代码，自己已经遗失了很多。不甘心不高兴，现在大三的我希望通过这个博客记录自己的学习心得，总结一下我的技巧，在此立一个flag以后凡是自己觉得有意义值得记录的知识，bug，坑等，乌龟将一一编写博文记录">
+<meta name="twitter:title" content="&#39;EnableCaching&#39;">
+<meta name="twitter:description" content="redis缓存本篇博客为博主学习springboot中使用redis缓存的一些笔记 依赖问题在springboot中使用redis作为缓存需引入以下依赖 1234&amp;lt;dependency&amp;gt;	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;	&amp;lt;artifactId&amp;gt;spring-boot-starter-data-r">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -45,7 +45,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -273,11 +273,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-EnableCaching" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/about/index.html" class="article-date">
-      <time datetime="2018-04-18T13:16:56.000Z" itemprop="datePublished">2018-04-18</time>
+      <a  href="/2018/07/13/EnableCaching/" class="article-date">
+      <time datetime="2018-07-13T07:12:44.000Z" itemprop="datePublished">2018-07-13</time>
 </a>
 
     </div>
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      &#39;EnableCaching&#39;
     </h1>
   
 
@@ -302,6 +302,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -309,58 +313,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
-
-
-          
-        <h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><p>山无棱天地和乃敢于码绝。我是奋斗在编码一线的程序猿。非常庆幸与软件工程专业相遇，希望未来的自己指尖敲出的符号不是为了生活，而是梦想。</p>
-<h2 id="本博客的目的"><a href="#本博客的目的" class="headerlink" title="本博客的目的"></a>本博客的目的</h2><p>好记性不如烂笔头，曾经写出的那些令自己兴奋许久的代码，自己已经遗失了很多。不甘心不高兴，现在大三的我希望通过这个博客记录自己的学习心得，总结一下我的技巧，在此立一个flag以后凡是自己觉得有意义值得记录的知识，bug，坑等，乌龟将一一编写博文记录。也希望我的博文能帮助到正好需要这个知识点的同学</p>
-<h2 id="编程的理想"><a href="#编程的理想" class="headerlink" title="编程的理想"></a>编程的理想</h2><p>一直觉得编程大牛才是世界上最叼的，好的程序员绝对是造福世界，改变世界。比尔盖茨用自己的window改变了整个世界，扎克伯格用facebook连接了全世界，等等。  </p>
-<p>我想用自己的代码改变世界，让来自全世界的人使用自己的软件，框架，哪怕是看了自己的文章，想想就觉得是一件兴奋的事情！—- write once run anywhere</p>
-<h2 id="技术方向"><a href="#技术方向" class="headerlink" title="技术方向"></a>技术方向</h2><ul>
-<li>主修java, jvm, js, spring, linux, concurrency,–&gt;python</li>
-<li>数据库方向，mysql，oracle，sqlservice</li>
-<li>缓存方面，redis</li>
-<li>服务器，tomcat，apache，</li>
-<li>喜欢架构，希望自己能够搭建一个高并发，高可用，高扩展，低耦合，轻量级的架构</li>
-</ul>
-<h2 id="兴趣"><a href="#兴趣" class="headerlink" title="兴趣"></a>兴趣</h2><ul>
-<li>运动：乒乓球，骑车，最爱的是夜晚听着蛙声压马路</li>
-<li>旅行：九寨归来不看水</li>
-<li>分享：喜欢把自己的经验分享给大家</li>
-<li>阅读：雨后天晴，你会如此干净，映照对方，像云一样透明 喜欢唯美的爱情故事<h2 id="欢迎留言"><a href="#欢迎留言" class="headerlink" title="欢迎留言"></a>欢迎留言</h2>如果有什么建议和想法，都可以和我留言，可以在博客下面留言</li>
-</ul>
+        <h2 id="redis缓存"><a href="#redis缓存" class="headerlink" title="redis缓存"></a>redis缓存</h2><p>本篇博客为博主学习springboot中使用redis缓存的一些笔记</p>
+<h2 id="依赖问题"><a href="#依赖问题" class="headerlink" title="依赖问题"></a>依赖问题</h2><p>在springboot中使用redis作为缓存需引入以下依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>可在pom文件中点击鼠标右键选择maven-&gt;show dependencies则可以查看全部依赖</p>
+<p>设置redis连接数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">      host: ip</span><br><span class="line">      password: password</span><br><span class="line">      port: 6379</span><br><span class="line">      jedis:</span><br><span class="line">        pool:</span><br><span class="line">        # 最大连接数</span><br><span class="line">          max-active: 140</span><br><span class="line">        # 最大空闲数</span><br><span class="line">          max-idle: 10</span><br><span class="line">        # 最小空闲</span><br><span class="line">          min-idle: 2</span><br><span class="line">          max-wait: 1000</span><br><span class="line">          #最大阻塞等待时间</span><br><span class="line">      timeout: 1000</span><br></pre></td></tr></table></figure>
+<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><h3 id="1-在启动类加上-EnableCaching"><a href="#1-在启动类加上-EnableCaching" class="headerlink" title="1 在启动类加上@EnableCaching"></a>1 在启动类加上@EnableCaching</h3><h3 id="2-Cacheable"><a href="#2-Cacheable" class="headerlink" title="2 @Cacheable"></a>2 @Cacheable</h3><p>使用该注解作用于方法上或类上，注解在方法上表示该方法返回值将进行缓存，注解在类上表示该类下的所有方法返回值都会被缓存</p>
+<p>该注解中有多个字段在这里我先记录我使用到注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Cacheable(cacheNames = &quot;wugui&quot;,key = &quot;#w.method()&quot;,condition = &quot;#w.method() &gt; 5&quot;, unless = &quot;#result.method() &lt;1 &quot;)</span><br></pre></td></tr></table></figure>
+<p>cacheNames相当于缓存主键，key则为辅助键，condition表示形参条件,unless表示返回值条件取反只有当condition与unless瞒住后才进行缓存其中的值为sqel表达式，key中的w表示形参名，unless中的resule为固定值，。注意其中的#</p>
+<h3 id="3-CacheEvict"><a href="#3-CacheEvict" class="headerlink" title="3 @CacheEvict"></a>3 @CacheEvict</h3><p>该注解表示执行方法后会删除缓存由参数 cacheNames ，key对应 一般在更新数据库时进行删除缓存操作，以便下次获取新的缓存</p>
+<h3 id="4-CachePut"><a href="#4-CachePut" class="headerlink" title="4 @CachePut"></a>4 @CachePut</h3><p>该注解表示将函数返回类容用来替换之前的缓存 参数类型需要一致 由参数 cacheNames ，key对应 </p>
+<h3 id="5-CacheConfig-cacheNames-“wugui”"><a href="#5-CacheConfig-cacheNames-“wugui”" class="headerlink" title="5 @CacheConfig(cacheNames = “wugui”)"></a>5 @CacheConfig(cacheNames = “wugui”)</h3><p>该注解作用于类上 可以统一设置类中cache类注解的相同属性值</p>
 
       
     </div>
@@ -368,11 +333,76 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2018/07/13/EnableCaching/">&#39;EnableCaching&#39;</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
+        <p><span>发布时间:</span>2018年07月13日 - 15时12分</p>
+        <p><span>最后更新:</span>2018年07月13日 - 22时41分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/13/EnableCaching/" title="&#39;EnableCaching&#39;">http://sharehe.cn/2018/07/13/EnableCaching/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/07/13/EnableCaching/　　作者: 吾生有崖,而知无崖" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2018/06/14/关于线程同步问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于线程值同步问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#redis缓存"><span class="toc-number">1.</span> <span class="toc-text">redis缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖问题"><span class="toc-number">2.</span> <span class="toc-text">依赖问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始操作"><span class="toc-number">3.</span> <span class="toc-text">开始操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在启动类加上-EnableCaching"><span class="toc-number">3.1.</span> <span class="toc-text">1 在启动类加上@EnableCaching</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Cacheable"><span class="toc-number">3.2.</span> <span class="toc-text">2 @Cacheable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CacheEvict"><span class="toc-number">3.3.</span> <span class="toc-text">3 @CacheEvict</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CachePut"><span class="toc-number">3.4.</span> <span class="toc-text">4 @CachePut</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CacheConfig-cacheNames-“wugui”"><span class="toc-number">3.5.</span> <span class="toc-text">5 @CacheConfig(cacheNames = “wugui”)</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
 
 
 
@@ -399,6 +429,41 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2018/06/14/关于线程同步问题/" title="下一篇: 关于线程值同步问题">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/13/EnableCaching/">'EnableCaching'</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/14/关于线程同步问题/">关于线程值同步问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/springBootWebSocket/">springBootWebSocket</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/03/关于integer/">关于integer</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/15/ssm代码自动生成工具包/">ssm代码自动生成工具包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/12/mysql索引/">mysql索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/09/maven-pom说明/">maven-pom与依赖说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/跨域带cookie问题/">跨域带cookie问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/25/破解单列模式/">单列模式注意事项与破解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/对象加载与创建/">对象加载与创建</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 
