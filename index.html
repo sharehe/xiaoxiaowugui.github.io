@@ -306,20 +306,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="redis缓存"><a href="#redis缓存" class="headerlink" title="redis缓存"></a>redis缓存</h2><p>本篇博客为博主学习springboot中使用redis缓存的一些笔记</p>
+              <h2 id="redis缓存"><a href="#redis缓存" class="headerlink" title="redis缓存"></a>redis缓存</h2><p>本篇博客为博主学习springboot中使用redis缓存的一些笔记</p>
 <h2 id="依赖问题"><a href="#依赖问题" class="headerlink" title="依赖问题"></a>依赖问题</h2><p>在springboot中使用redis作为缓存需引入以下依赖</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <p>可在pom文件中点击鼠标右键选择maven-&gt;show dependencies则可以查看全部依赖</p>
-<p>设置redis连接数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">      host: ip</span><br><span class="line">      password: password</span><br><span class="line">      port: 6379</span><br><span class="line">      jedis:</span><br><span class="line">        pool:</span><br><span class="line">        # 最大连接数</span><br><span class="line">          max-active: 140</span><br><span class="line">        # 最大空闲数</span><br><span class="line">          max-idle: 10</span><br><span class="line">        # 最小空闲</span><br><span class="line">          min-idle: 2</span><br><span class="line">          max-wait: 1000</span><br><span class="line">          #最大阻塞等待时间</span><br><span class="line">      timeout: 1000</span><br></pre></td></tr></table></figure>
-<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><h3 id="1-在启动类加上-EnableCaching"><a href="#1-在启动类加上-EnableCaching" class="headerlink" title="1 在启动类加上@EnableCaching"></a>1 在启动类加上@EnableCaching</h3><h3 id="2-Cacheable"><a href="#2-Cacheable" class="headerlink" title="2 @Cacheable"></a>2 @Cacheable</h3><p>使用该注解作用于方法上或类上，注解在方法上表示该方法返回值将进行缓存，注解在类上表示该类下的所有方法返回值都会被缓存</p>
-<p>该注解中有多个字段在这里我先记录我使用到注解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Cacheable(cacheNames = &quot;wugui&quot;,key = &quot;#w.method()&quot;,condition = &quot;#w.method() &gt; 5&quot;, unless = &quot;#result.method() &lt;1 &quot;)</span><br></pre></td></tr></table></figure>
-<p>cacheNames相当于缓存主键，key则为辅助键，condition表示形参条件,unless表示返回值条件取反只有当condition与unless瞒住后才进行缓存其中的值为sqel表达式，key中的w表示形参名，unless中的resule为固定值，。注意其中的#</p>
-<h3 id="3-CacheEvict"><a href="#3-CacheEvict" class="headerlink" title="3 @CacheEvict"></a>3 @CacheEvict</h3><p>该注解表示执行方法后会删除缓存由参数 cacheNames ，key对应 一般在更新数据库时进行删除缓存操作，以便下次获取新的缓存</p>
-<h3 id="4-CachePut"><a href="#4-CachePut" class="headerlink" title="4 @CachePut"></a>4 @CachePut</h3><p>该注解表示将函数返回类容用来替换之前的缓存 参数类型需要一致 由参数 cacheNames ，key对应 </p>
-<h3 id="5-CacheConfig-cacheNames-“wugui”"><a href="#5-CacheConfig-cacheNames-“wugui”" class="headerlink" title="5 @CacheConfig(cacheNames = “wugui”)"></a>5 @CacheConfig(cacheNames = “wugui”)</h3><p>该注解作用于类上 可以统一设置类中cache类注解的相同属性值</p>
-
+          
       
     </div>
     
@@ -332,6 +323,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2018/07/13/EnableCaching/#more">查看更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
