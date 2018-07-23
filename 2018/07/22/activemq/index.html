@@ -9,18 +9,20 @@
   
   <title>activemq | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="梦想做系统分析师的乌龟">
-<meta name="keywords" content="贺严锋">
+  <meta name="description" content="activemq与rabbitmq的区别上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别 activemq： 优点 -&amp;gt; 遵循JMS规范，安装部署方便 缺点 -&amp;gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少 适合中小型项目消息应用，不适合上千队列应用场景 rabbitmq: 优点">
+<meta name="keywords" content="消息队列activemq">
 <meta property="og:type" content="article">
 <meta property="og:title" content="activemq">
 <meta property="og:url" content="http://sharehe.cn/2018/07/22/activemq/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="梦想做系统分析师的乌龟">
+<meta property="og:description" content="activemq与rabbitmq的区别上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别 activemq： 优点 -&amp;gt; 遵循JMS规范，安装部署方便 缺点 -&amp;gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少 适合中小型项目消息应用，不适合上千队列应用场景 rabbitmq: 优点">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-22T09:30:38.085Z">
+<meta property="og:image" content="http://sharehe.cn/img/mq/jms.jpg">
+<meta property="og:updated_time" content="2018-07-22T14:39:25.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="activemq">
-<meta name="twitter:description" content="梦想做系统分析师的乌龟">
+<meta name="twitter:description" content="activemq与rabbitmq的区别上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别 activemq： 优点 -&amp;gt; 遵循JMS规范，安装部署方便 缺点 -&amp;gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少 适合中小型项目消息应用，不适合上千队列应用场景 rabbitmq: 优点">
+<meta name="twitter:image" content="http://sharehe.cn/img/mq/jms.jpg">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -173,7 +175,7 @@
                         
                             <li><a  href="/archives/">所有文章</a></li>
                         
-                            <li><a  href="/categories/开发工具/">项目实列</a></li>
+                            <li><a  href="/myPage/xiangmu">项目实列</a></li>
                         
                             <li><a  href="/myPage/mp3">听听音乐</a></li>
                         
@@ -186,17 +188,13 @@
                             
                                 <a class="fl github"  target="_blank" href="https://github.com/xiaoxiaowugui" title="github">github</a>
                             
-                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
-                            
                         </ul>
                     </nav>
                 </section>
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/gof/" style="font-size: 10px;">gof</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/工具包/" style="font-size: 10px;">工具包</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+                        <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/gof/" style="font-size: 10px;">gof</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/工具包/" style="font-size: 10px;">工具包</a> <a href="/tags/消息队列activemq/" style="font-size: 10px;">消息队列activemq</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
                     </div>
                 </section>
                 
@@ -250,7 +248,7 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/categories/开发工具/">项目实列</a></li>
+                    <li><a href="/myPage/xiangmu">项目实列</a></li>
                 
                     <li><a href="/myPage/mp3">听听音乐</a></li>
                 
@@ -263,10 +261,6 @@
                 <div class="social">
                     
                         <a class="github" target="_blank" href="https://github.com/xiaoxiaowugui" title="github">github</a>
-                    
-                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
             </nav>
@@ -300,8 +294,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/mq/">mq</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/消息队列activemq/">消息队列activemq</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -309,7 +311,37 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h4 id="activemq与rabbitmq的区别"><a href="#activemq与rabbitmq的区别" class="headerlink" title="activemq与rabbitmq的区别"></a>activemq与rabbitmq的区别</h4><p>上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别</p>
+<p>activemq：</p>
+<p>优点 -&gt; 遵循JMS规范，安装部署方便</p>
+<p>缺点 -&gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少</p>
+<p>适合中小型项目消息应用，不适合上千队列应用场景</p>
+<p>rabbitmq:</p>
+<p>优点 -&gt; 继承erlang天生并发性最初用于金融行业，稳定性，安全性有保障</p>
+<p>缺点 -&gt; erlang语言难度较大不支持动态扩展</p>
+<p>适合对稳定性要求高的应用</p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="JMS"><a href="#JMS" class="headerlink" title="JMS"></a>JMS</h2><p>jms是什么呢是java消息中间件的接口规范</p>
+<p>各接口之间的关系如下图所示</p>
+<p><img src="http://sharehe.cn/img/mq/jms.jpg" alt=""></p>
+<h2 id="配置activemq"><a href="#配置activemq" class="headerlink" title="配置activemq"></a>配置activemq</h2><ol>
+<li>下载activemq  window 版本<a href="http://www.apache.org/dyn/closer.cgi?filename=/activemq/5.15.4/apache-activemq-5.15.4-bin.zip&amp;action=download" target="_blank" rel="noopener">apache-activemq-5.15.4-bin.zip</a>,linux版本 <a href="http://www.apache.org/dyn/closer.cgi?filename=/activemq/5.15.4/apache-activemq-5.15.4-bin.tar.gz&amp;action=download" target="_blank" rel="noopener">apache-activemq-5.15.4-bin.tar.gz</a></li>
+<li>在bin目录中启动程序</li>
+<li>特别说明在windows中可以选择以服务的方式启动activemq 既启动运行InstallService.bat后再服务中启动对应服务</li>
+<li>启动后通过<a href="http://ip:8161即可访问activemq管理，默认中号密码为admin" target="_blank" rel="noopener">http://ip:8161即可访问activemq管理，默认中号密码为admin</a></li>
+</ol>
+<h2 id="使用jms操作消息队列"><a href="#使用jms操作消息队列" class="headerlink" title="使用jms操作消息队列"></a>使用jms操作消息队列</h2><h3 id="加入依赖"><a href="#加入依赖" class="headerlink" title="加入依赖"></a>加入依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.apache.activemq&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;activemq-all&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;5.9.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//  activemq默认端口为61616</span><br><span class="line">        String url =    &quot;tcp://127.0.0.1:61616&quot;;</span><br><span class="line">        // 创建工厂</span><br><span class="line">        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);</span><br><span class="line">        try &#123;</span><br><span class="line">            // 获得连接</span><br><span class="line">            Connection connection = connectionFactory.createConnection();</span><br><span class="line">            // 启动连接</span><br><span class="line">            connection.start();</span><br><span class="line">            // 获得session</span><br><span class="line">            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">            // 设置路径，  “wugui”为消息队列名称</span><br><span class="line">            Destination wugui = session.createQueue(&quot;wugui&quot;);</span><br><span class="line">            // 创建消息生产者</span><br><span class="line">            MessageProducer producer = session.createProducer(wugui);</span><br><span class="line">            // 发送文本消息</span><br><span class="line">            TextMessage textMessage = null;</span><br><span class="line">            for (int q = 0; q &lt; 500; q++) &#123;</span><br><span class="line">                textMessage = session.createTextMessage(&quot;wugui&quot; + q);</span><br><span class="line">                producer.send(textMessage);</span><br><span class="line">            &#125;</span><br><span class="line">            // 关闭连接</span><br><span class="line">            connection.close();</span><br><span class="line">        &#125; catch (JMSException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="接收消息"><a href="#接收消息" class="headerlink" title="接收消息"></a>接收消息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">String url = &quot;tcp://127.0.0.1:61616&quot;;</span><br><span class="line">ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);</span><br><span class="line">try &#123;</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line">    Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">    Destination destination = session.createQueue(&quot;wugui&quot;);</span><br><span class="line">    MessageConsumer consumer = session.createConsumer(destination);</span><br><span class="line">    consumer.setMessageListener((a) -&gt;&#123;</span><br><span class="line">        TextMessage textMessage = (TextMessage) a;</span><br><span class="line">        try &#123;</span><br><span class="line">            System.out.println(textMessage.getText());</span><br><span class="line">        &#125; catch (JMSException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125; catch (JMSException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上为非订阅模式如果需要订阅模式 在session.createQueue处修改为session.createTopic即可</p>
+<p>在这里要注意这两个模式的区别</p>
+<h2 id="active集群配置"><a href="#active集群配置" class="headerlink" title="active集群配置"></a>active集群配置</h2><p>activemq.xml</p>
+<networkconnectors><br><br>​    <networkconnector name="*" uri="static:(tcp://ip:port,tcp://ip:port)"><br><br></networkconnector></networkconnectors>
+
+<p>jetty.xml</p>
+</the>
       
     </div>
     
@@ -320,7 +352,7 @@
         <p><span>本文标题:</span><a  href="/2018/07/22/activemq/">activemq</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
         <p><span>发布时间:</span>2018年07月22日 - 17时30分</p>
-        <p><span>最后更新:</span>2018年07月22日 - 17时30分</p>
+        <p><span>最后更新:</span>2018年07月22日 - 22时39分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/22/activemq/" title="activemq">http://sharehe.cn/2018/07/22/activemq/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/07/22/activemq/　　作者: 吾生有崖,而知无崖" title=""></span>
@@ -348,7 +380,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#activemq与rabbitmq的区别"><span class="toc-number">1.</span> <span class="toc-text">activemq与rabbitmq的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JMS"><span class="toc-number"></span> <span class="toc-text">JMS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置activemq"><span class="toc-number"></span> <span class="toc-text">配置activemq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用jms操作消息队列"><span class="toc-number"></span> <span class="toc-text">使用jms操作消息队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加入依赖"><span class="toc-number"></span> <span class="toc-text">加入依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送消息"><span class="toc-number"></span> <span class="toc-text">发送消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接收消息"><span class="toc-number"></span> <span class="toc-text">接收消息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#active集群配置"><span class="toc-number"></span> <span class="toc-text">active集群配置</span></a>
 </div>
 <style>
     .left-col .switch-btn {
