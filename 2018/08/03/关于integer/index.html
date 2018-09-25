@@ -7,20 +7,20 @@
   
   
   
-  <title>mysql索引 | WuGui</title>
+  <title>关于integer | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mysql支持的索引类型索引的主要作用告诉存储引擎如何快速的找到我们是偶需要的数据所以mysql索引是在存储层实现的，而不是在服务器上实现的，">
-<meta name="keywords" content="学习笔记">
+  <meta name="description" content="​    Integer为java基本数据类型int的包装类，int a = 1; Integer b = a; 这个过程a由数值类型变成了引用类型，所以便存在很多数值类型与引用类型的使用区别，若不小心将会为程序留下一些不容易发现的隐患。">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql索引">
-<meta property="og:url" content="http://sharehe.cn/2018/05/12/mysql索引/index.html">
+<meta property="og:title" content="关于integer">
+<meta property="og:url" content="http://sharehe.cn/2018/08/03/关于integer/index.html">
 <meta property="og:site_name" content="WuGui">
-<meta property="og:description" content="mysql支持的索引类型索引的主要作用告诉存储引擎如何快速的找到我们是偶需要的数据所以mysql索引是在存储层实现的，而不是在服务器上实现的，">
+<meta property="og:description" content="​    Integer为java基本数据类型int的包装类，int a = 1; Integer b = a; 这个过程a由数值类型变成了引用类型，所以便存在很多数值类型与引用类型的使用区别，若不小心将会为程序留下一些不容易发现的隐患。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-15T02:20:17.914Z">
+<meta property="og:updated_time" content="2018-09-25T10:38:12.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql索引">
-<meta name="twitter:description" content="mysql支持的索引类型索引的主要作用告诉存储引擎如何快速的找到我们是偶需要的数据所以mysql索引是在存储层实现的，而不是在服务器上实现的，">
+<meta name="twitter:title" content="关于integer">
+<meta name="twitter:description" content="​    Integer为java基本数据类型int的包装类，int a = 1; Integer b = a; 这个过程a由数值类型变成了引用类型，所以便存在很多数值类型与引用类型的使用区别，若不小心将会为程序留下一些不容易发现的隐患。">
   
     <link rel="alternative" href="/atom.xml" title="WuGui" type="application/atom+xml">
   
@@ -265,11 +265,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-mysql索引" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-关于integer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/05/12/mysql索引/" class="article-date">
-      <time datetime="2018-05-12T07:29:12.000Z" itemprop="datePublished">2018-05-12</time>
+      <a  href="/2018/08/03/关于integer/" class="article-date">
+      <time datetime="2018-08-03T09:06:47.000Z" itemprop="datePublished">2018-08-03</time>
 </a>
 
     </div>
@@ -283,7 +283,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mysql索引
+      关于integer
     </h1>
   
 
@@ -292,10 +292,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/包装类/">包装类</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -305,29 +309,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="mysql支持的索引类型"><a href="#mysql支持的索引类型" class="headerlink" title="mysql支持的索引类型"></a>mysql支持的索引类型</h2><p>索引的主要作用告诉存储引擎如何快速的找到我们是偶需要的数据所以mysql索引是在存储层实现的，而不是在服务器上实现的，</p>
+        <p>​    Integer为java基本数据类型int的包装类，int a = 1; Integer b = a; 这个过程a由数值类型变成了引用类型，所以便存在很多数值类型与引用类型的使用区别，若不小心将会为程序留下一些不容易发现的隐患。</p>
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<p>B-tree索引特点：</p>
-<p>B-tree索引以B+树的结构存储数据</p>
-<p>B-tree索引能够加快数据的查询速度，索引大小远小于表中数据大小，使存储引擎不用进行全盘扫描查找数据从索引根节点进行搜索根据指针向下搜索</p>
-<p>B-tree索引更适合进行范围查找</p>
-<p>在以下情况可以使用B数索引</p>
-<p>全值匹配的查询   –  id=’123456’</p>
-<p>匹配最左前缀的查询  </p>
-<p>匹配列前缀查询   –匹配某一列开头  id like ‘123%’</p>
-<p>匹配范围值得查询</p>
-<p>只访问索引的查询</p>
-<p>btree索引的使用限制:</p>
-<p>如果不是按照索引最左列开始查找，则无法使用索引  –查询必须从索引的第一个开始</p>
-<p>使用索引时不能跳过索引中的列   –  比如123都是索引  查询使使用了13 则只有1起作用</p>
-<p>not in 无法使用索引</p>
-<p>如果查询中右某个列的范围查询则其右边的所有列都无法使用索引</p>
-<p>Hash索引</p>
-<p>基于hash表实现的，只有查询条件精准匹配hash索引中的所有列时才能使用</p>
-<p>索引优化策越</p>
-<p>索引列上不能使用表达式或函数</p>
+<h2 id="自动装箱与拆箱"><a href="#自动装箱与拆箱" class="headerlink" title="自动装箱与拆箱"></a>自动装箱与拆箱</h2><p>自动装箱与拆箱是在jdk1.5之后出现的说法，它是java语言的一个语法糖。</p>
+<p>比如如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = 1;</span><br><span class="line">Integer b = a;		// Integer b = Integer.valueOf(a);</span><br><span class="line">a = b + 1;			// a = Integer.intValue(b) + 1;</span><br></pre></td></tr></table></figure>
+<p>在这个过程中第二行第三行分别发生了自动装箱与自动拆箱的过程，编译时代码行将会变为后面注释代码。</p>
+<p>在什么过程中会发生装箱与拆箱呢，我的总结如下：</p>
+<ol>
+<li>在赋值符号 (=) 两边分别为包装类与基本数据类型则会发生自动装箱</li>
+<li>在赋值符号 (=) 两边分别为基本数据类型与包装类则会发生自动拆箱</li>
+<li>在用包装类进行数值运算时会发生自动拆箱</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Integer a = 1;</span><br><span class="line">Integer a1 =1;</span><br><span class="line">Integer b = 255;</span><br><span class="line">Integer b1 =255;</span><br><span class="line">Double d = 1D;  //D表示1为double数据类型</span><br><span class="line">System.out.println(a == 1);</span><br><span class="line">System.out.println(b == 255);</span><br><span class="line">System.out.println(a == a1);</span><br><span class="line">System.out.println(b == b1);</span><br><span class="line">System.out.println(a.equals(a1));</span><br><span class="line">System.out.println(b.equals(b1));</span><br><span class="line">System.out.println(b.equals(255));</span><br><span class="line">System.out.println(a.equals(d));</span><br></pre></td></tr></table></figure>
+<p>执行以上代码后输出的结果是什么呢，我们不妨先向想一想在这个比较过程中是数值类型在比较还是引用类型在比较，</p>
+<p>数值类型与引用类型 == 分别比较的是什么</p>
+<p>现在揭晓执行后的结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Integer a = 1;</span><br><span class="line">Integer a1 =1;</span><br><span class="line">Integer b = 255;</span><br><span class="line">Integer b1 =255;</span><br><span class="line">Double d = 1D;</span><br><span class="line">System.out.println(a == 1);		// 1 true</span><br><span class="line">System.out.println(b == 255);	// 2 true</span><br><span class="line">System.out.println(a == a1);	// 3 true</span><br><span class="line">System.out.println(b == b1);	// 4 false</span><br><span class="line">System.out.println(a.equals(a1));// 5 true</span><br><span class="line">System.out.println(b.equals(b1));// 6 true</span><br><span class="line">System.out.println(b.equals(255));// 7 true</span><br><span class="line">System.out.println(a.equals(d));  // 8 false</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>1与2 输出结果为true是因为a与b发送的自动拆箱，这里实际上为两个基本数据类型在进行比较，所以==比较的是值是否相等</p>
+</li>
+<li><p>3由于a,a1均为包装类型这不会发送装箱与拆箱所以 == 比较的这是两个引用类型，比较地址是否相等，由于integet是不可变类，那么这里是不是应该输出false呢，为什么是true呢，这里需要在Integer.valueOf()中去寻找答案，我们查看源码后发现Integer内部存在缓存，也就是 -128到127是存在缓存的，所以第三条输出的是true也就正常了</p>
+</li>
+<li><p>4有上面一点说明所以该处为false</p>
+</li>
+<li><p>以下为Integer从写Object的equals方法具体实现方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals(Object obj) &#123;</span><br><span class="line">       if (obj instanceof Integer) &#123;</span><br><span class="line">           return value == ((Integer)obj).intValue();</span><br><span class="line">       &#125;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>所以 5 6 7 8 输出结果便可以理解了</p>
+</li>
+</ol>
+<h2 id="为什么需要包装类"><a href="#为什么需要包装类" class="headerlink" title="为什么需要包装类"></a>为什么需要包装类</h2><p>我们知道Java是一个面相对象的编程语言，基本类型并不具有对象的性质，为了让基本类型也具有对象的特征，就出现了包装类型。</p>
+<p>比如，当需要往ArrayList，HashMap中放东西时，像int，double这种基本类型是放不进去的，因为容器都是装object的，所以需要包装类型</p>
 </the>
       
     </div>
@@ -336,13 +350,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/05/12/mysql索引/">mysql索引</a></p>
+        <p><span>本文标题:</span><a  href="/2018/08/03/关于integer/">关于integer</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
-        <p><span>发布时间:</span>2018年05月12日 - 15时29分</p>
-        <p><span>最后更新:</span>2018年05月15日 - 10时20分</p>
+        <p><span>发布时间:</span>2018年08月03日 - 17时06分</p>
+        <p><span>最后更新:</span>2018年09月25日 - 18时38分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/12/mysql索引/" title="mysql索引">http://sharehe.cn/2018/05/12/mysql索引/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/05/12/mysql索引/　　作者: 吾生有崖,而知无崖" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/03/关于integer/" title="关于integer">http://sharehe.cn/2018/08/03/关于integer/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/08/03/关于integer/　　作者: 吾生有崖,而知无崖" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -353,18 +367,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/05/15/rabbitmq操作/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2018/09/20/跨域带cookie问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          rabbitmq
+          跨域带cookie问题
         
       </div>
     </a>
   
   
-    <a  href="/2018/05/09/maven-pom说明/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">maven-pom与依赖说明</div>
+    <a  href="/2018/07/13/EnableCaching/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&#39;EnableCaching&#39;</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -376,7 +390,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql支持的索引类型"><span class="toc-number">1.</span> <span class="toc-text">mysql支持的索引类型</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#自动装箱与拆箱"><span class="toc-number">1.</span> <span class="toc-text">自动装箱与拆箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么需要包装类"><span class="toc-number">3.</span> <span class="toc-text">为什么需要包装类</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -443,13 +457,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/05/15/rabbitmq操作/" title="上一篇: rabbitmq">
+            <a  href="/2018/09/20/跨域带cookie问题/" title="上一篇: 跨域带cookie问题">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/05/09/maven-pom说明/" title="下一篇: maven-pom与依赖说明">
+            <a  href="/2018/07/13/EnableCaching/" title="下一篇: &#39;EnableCaching&#39;">
                 <i class="fa fa-angle-right"></i>
             </a>
         

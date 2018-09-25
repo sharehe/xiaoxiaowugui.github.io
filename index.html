@@ -269,11 +269,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-activemq" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-破解单列模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/07/22/activemq/" class="article-date">
-      <time datetime="2018-07-22T09:30:37.000Z" itemprop="datePublished">2018-07-22</time>
+      <a  href="/2018/09/25/破解单列模式/" class="article-date">
+      <time datetime="2018-09-25T11:16:26.000Z" itemprop="datePublished">2018-09-25</time>
 </a>
 
     </div>
@@ -287,7 +287,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2018/07/22/activemq/">activemq</a>
+      <a  class="article-title" href="/2018/09/25/破解单列模式/">单列模式注意事项与破解</a>
     </h1>
   
 
@@ -298,15 +298,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h4 id="activemq与rabbitmq的区别"><a href="#activemq与rabbitmq的区别" class="headerlink" title="activemq与rabbitmq的区别"></a>activemq与rabbitmq的区别</h4><p>上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别</p>
-<p>activemq：</p>
-<p>优点 -&gt; 遵循JMS规范，安装部署方便</p>
-<p>缺点 -&gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少</p>
-<p>适合中小型项目消息应用，不适合上千队列应用场景</p>
-<p>rabbitmq:</p>
-<p>优点 -&gt; 继承erlang天生并发性最初用于金融行业，稳定性，安全性有保障</p>
-<p>缺点 -&gt; erlang语言难度较大不支持动态扩展</p>
-<p>适合对稳定性要求高的应用</p>
+              <p>本篇博文需要有java并发，类加载过程，java反射的一些知识</p>
+<p>单列确保系统中一个类只用一个实列</p>
+<p>单列模式提供的全局访问方法可以认为使用了简单工厂模式，简单点来说单列模式自己负责创建自己</p>
+<h2 id="单列模式的创建方式"><a href="#单列模式的创建方式" class="headerlink" title="单列模式的创建方式"></a>单列模式的创建方式</h2><p>由于本文主要讲解如何破解单列模式，所以在这里就不详细介绍，简单的列举5种创建方式与特点</p>
+<ol>
+<li><p>饿汉式  – 线程安全不延时加载</p>
+</li>
+<li><p>懒汉式 –线程不安全延时加载 –可能存在引用还没完全初始化的对象</p>
+</li>
+<li><p>双重检索机制 –线程相对安全延时加载</p>
+</li>
+<li><p>静态内部类 –线程安全延时加载 –由于对象变量为静态变量在类加载过程中的初始化阶段虚拟机保证一个类的<clinit>()方法在多线程中被正确的加锁，同步–&gt;线程安全。–内部类在虚拟机中特性为延迟加载</clinit></p>
+</li>
+<li><p>枚举模式   –线程安全不能延时加载天然单列模式不可通过反射序列化反序列化破解</p>
           
       
     </div>
@@ -314,19 +319,15 @@
     <div class="article-info article-info-index">
       
       
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/mq/">mq</a>
-    </div>
-
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gof/">gof</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a   href="/2018/07/22/activemq/#more">查看更多 >></a>
+          <a   href="/2018/09/25/破解单列模式/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -347,11 +348,11 @@
 
 
   
-    <article id="post-rabbitmq操作" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-跨域带cookie问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/07/15/rabbitmq操作/" class="article-date">
-      <time datetime="2018-07-15T01:57:50.000Z" itemprop="datePublished">2018-07-15</time>
+      <a  href="/2018/09/20/跨域带cookie问题/" class="article-date">
+      <time datetime="2018-09-20T08:11:32.000Z" itemprop="datePublished">2018-09-20</time>
 </a>
 
     </div>
@@ -365,7 +366,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2018/07/15/rabbitmq操作/">rabbitmq</a>
+      <a  class="article-title" href="/2018/09/20/跨域带cookie问题/">跨域带cookie问题</a>
     </h1>
   
 
@@ -376,15 +377,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="linux安装rabbitmq"><a href="#linux安装rabbitmq" class="headerlink" title="linux安装rabbitmq"></a>linux安装rabbitmq</h2><p>安装rabbitmq需要安装erlang，在对应官网分别下载对应源码文件</p>
-<p>rabbitmq 下载页面<a href="http://www.rabbitmq.com/download.html" target="_blank" rel="noopener">http://www.rabbitmq.com/download.html</a> 下载<a href="https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.7/rabbitmq-server-3.7.7-1.el6.noarch.rpm" target="_blank" rel="noopener">RHEL/CentOS 6.x</a> </p>
-<p>erlang 下载页面<a href="http://www.erlang.org/downloads" target="_blank" rel="noopener">http://www.erlang.org/downloads</a> 下载<a href="http://erlang.org/download/otp_src_21.0.tar.gz" target="_blank" rel="noopener">OTP 21.0 Source File </a></p>
-<h3 id="安装erlang与对应依赖"><a href="#安装erlang与对应依赖" class="headerlink" title="安装erlang与对应依赖"></a>安装erlang与对应依赖</h3><ol>
-<li><p>yum install ncurses-devel</p>
-</li>
-<li><p>解压erlang的gz文件 tar xf otp_src_*</p>
-</li>
-<li><p>进入解压后目录 cd otp_src_*</p>
+              <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。</p>
           
       
     </div>
@@ -393,18 +386,88 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/mq/">mq</a>
+    <a class="article-category-link" href="/categories/http/">http</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a   href="/2018/07/15/rabbitmq操作/#more">查看更多 >></a>
+          <a   href="/2018/09/20/跨域带cookie问题/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-关于integer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/08/03/关于integer/" class="article-date">
+      <time datetime="2018-08-03T09:06:47.000Z" itemprop="datePublished">2018-08-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/08/03/关于integer/">关于integer</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>​    Integer为java基本数据类型int的包装类，int a = 1; Integer b = a; 这个过程a由数值类型变成了引用类型，所以便存在很多数值类型与引用类型的使用区别，若不小心将会为程序留下一些不容易发现的隐患。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/包装类/">包装类</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/08/03/关于integer/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -634,11 +697,11 @@
 
 
   
-    <article id="post-关于integer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-activemq" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/06/03/关于integer/" class="article-date">
-      <time datetime="2018-06-03T09:06:47.000Z" itemprop="datePublished">2018-06-03</time>
+      <a  href="/2018/05/22/activemq/" class="article-date">
+      <time datetime="2018-05-22T09:30:37.000Z" itemprop="datePublished">2018-05-22</time>
 </a>
 
     </div>
@@ -652,7 +715,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2018/06/03/关于integer/">关于integer</a>
+      <a  class="article-title" href="/2018/05/22/activemq/">activemq</a>
     </h1>
   
 
@@ -663,7 +726,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>​    Integer为java基本数据类型int的包装类，int a = 1; Integer b = a; 这个过程a由数值类型变成了引用类型，所以便存在很多数值类型与引用类型的使用区别，若不小心将会为程序留下一些不容易发现的隐患。</p>
+              <h4 id="activemq与rabbitmq的区别"><a href="#activemq与rabbitmq的区别" class="headerlink" title="activemq与rabbitmq的区别"></a>activemq与rabbitmq的区别</h4><p>上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别</p>
+<p>activemq：</p>
+<p>优点 -&gt; 遵循JMS规范，安装部署方便</p>
+<p>缺点 -&gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少</p>
+<p>适合中小型项目消息应用，不适合上千队列应用场景</p>
+<p>rabbitmq:</p>
+<p>优点 -&gt; 继承erlang天生并发性最初用于金融行业，稳定性，安全性有保障</p>
+<p>缺点 -&gt; erlang语言难度较大不支持动态扩展</p>
+<p>适合对稳定性要求高的应用</p>
           
       
     </div>
@@ -672,18 +743,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/包装类/">包装类</a>
+    <a class="article-category-link" href="/categories/mq/">mq</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a   href="/2018/06/03/关于integer/#more">查看更多 >></a>
+          <a   href="/2018/05/22/activemq/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -734,6 +805,7 @@
       
           
               <h2 id="工具包功能说明"><a href="#工具包功能说明" class="headerlink" title="工具包功能说明"></a>工具包功能说明</h2><p>该工具包主要完成在项目内根据提供的实体类包，自动生成spring mybatis，所需要的service层接口与实现，数据库表的创建包括主键，描述，长度等的设置，数据库操作接口与对应xml文件，支持jar与maven </p>
+<p><strong>可生成的为 增删改查，删除多个，查询多个的方法 </strong></p>
 <p>—&gt;演示视频如下</p>
           
       
@@ -755,6 +827,84 @@
       
         <p class="article-more-link">
           <a   href="/2018/05/15/ssm代码自动生成工具包/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-rabbitmq操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/05/15/rabbitmq操作/" class="article-date">
+      <time datetime="2018-05-15T01:57:50.000Z" itemprop="datePublished">2018-05-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/05/15/rabbitmq操作/">rabbitmq</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="linux安装rabbitmq"><a href="#linux安装rabbitmq" class="headerlink" title="linux安装rabbitmq"></a>linux安装rabbitmq</h2><p>安装rabbitmq需要安装erlang，在对应官网分别下载对应源码文件</p>
+<p>rabbitmq 下载页面<a href="http://www.rabbitmq.com/download.html" target="_blank" rel="noopener">http://www.rabbitmq.com/download.html</a> 下载<a href="https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.7/rabbitmq-server-3.7.7-1.el6.noarch.rpm" target="_blank" rel="noopener">RHEL/CentOS 6.x</a> </p>
+<p>erlang 下载页面<a href="http://www.erlang.org/downloads" target="_blank" rel="noopener">http://www.erlang.org/downloads</a> 下载<a href="http://erlang.org/download/otp_src_21.0.tar.gz" target="_blank" rel="noopener">OTP 21.0 Source File </a></p>
+<h3 id="安装erlang与对应依赖"><a href="#安装erlang与对应依赖" class="headerlink" title="安装erlang与对应依赖"></a>安装erlang与对应依赖</h3><ol>
+<li><p>yum install ncurses-devel</p>
+</li>
+<li><p>解压erlang的gz文件 tar xf otp_src_*</p>
+</li>
+<li><p>进入解压后目录 cd otp_src_*</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/mq/">mq</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/05/15/rabbitmq操作/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -821,142 +971,6 @@
       
         <p class="article-more-link">
           <a   href="/2018/05/12/mysql索引/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-maven-pom说明" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/05/09/maven-pom说明/" class="article-date">
-      <time datetime="2018-05-09T14:36:55.000Z" itemprop="datePublished">2018-05-09</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/05/09/maven-pom说明/">maven-pom与依赖说明</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>​    在把自己的jar提供到中央厂库的时候发现自己对maven认识还不足够，于是便再一次详细看了一篇，一门技术当你不懂的时候学习的过程是很快的，当你了解了一些，再学习的过程便会变慢，这便是高中老师经常说的书会越读越后最后变薄的过程吧</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/05/09/maven-pom说明/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-跨域带cookie问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/04/27/跨域带cookie问题/" class="article-date">
-      <time datetime="2018-04-27T08:11:32.000Z" itemprop="datePublished">2018-04-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/04/27/跨域带cookie问题/">跨域带cookie问题</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>​    简单来说就是请求的地址与页面地址的协议，域名，端口号只要其中之一不一样就属于跨域，跨域情况下如果不进行处理就不能获得请求后的数据，为什么说是请求后的呢而不是不能请求，因为跨域情况下请求也是到了后台的进入了对应action，在后台返回http头中如果没有相对应的字段就表示后台不允许跨域，浏览器才会出于安全原因拒绝跨域。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/http/">http</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/04/27/跨域带cookie问题/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>
