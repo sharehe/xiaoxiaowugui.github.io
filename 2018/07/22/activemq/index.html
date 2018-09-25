@@ -10,7 +10,7 @@
   <title>activemq | WuGui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="activemq与rabbitmq的区别上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别 activemq： 优点 -&amp;gt; 遵循JMS规范，安装部署方便 缺点 -&amp;gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少 适合中小型项目消息应用，不适合上千队列应用场景 rabbitmq: 优点">
-<meta name="keywords" content="消息队列activemq">
+<meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="activemq">
 <meta property="og:url" content="http://sharehe.cn/2018/07/22/activemq/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:description" content="activemq与rabbitmq的区别上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别 activemq： 优点 -&amp;gt; 遵循JMS规范，安装部署方便 缺点 -&amp;gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少 适合中小型项目消息应用，不适合上千队列应用场景 rabbitmq: 优点">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://sharehe.cn/img/mq/jms.jpg">
-<meta property="og:updated_time" content="2018-07-22T14:39:25.179Z">
+<meta property="og:updated_time" content="2018-07-24T07:20:54.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="activemq">
 <meta name="twitter:description" content="activemq与rabbitmq的区别上一篇博文讲解了rabbitmq消息中间件的一些使用方法，在使用activemq之前我们先了解一下他们二则的区别 activemq： 优点 -&amp;gt; 遵循JMS规范，安装部署方便 缺点 -&amp;gt; 会莫名丢失消息，目前重心在下一代产品apolle上，目前社区不活跃，对5.x维护较少 适合中小型项目消息应用，不适合上千队列应用场景 rabbitmq: 优点">
@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/gof/" style="font-size: 10px;">gof</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/工具包/" style="font-size: 10px;">工具包</a> <a href="/tags/消息队列activemq/" style="font-size: 10px;">消息队列activemq</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+                        <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/gof/" style="font-size: 10px;">gof</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/工具包/" style="font-size: 10px;">工具包</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
                     </div>
                 </section>
                 
@@ -301,7 +301,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/消息队列activemq/">消息队列activemq</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -337,10 +337,12 @@
 <h3 id="接收消息"><a href="#接收消息" class="headerlink" title="接收消息"></a>接收消息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">String url = &quot;tcp://127.0.0.1:61616&quot;;</span><br><span class="line">ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);</span><br><span class="line">try &#123;</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line">    Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">    Destination destination = session.createQueue(&quot;wugui&quot;);</span><br><span class="line">    MessageConsumer consumer = session.createConsumer(destination);</span><br><span class="line">    consumer.setMessageListener((a) -&gt;&#123;</span><br><span class="line">        TextMessage textMessage = (TextMessage) a;</span><br><span class="line">        try &#123;</span><br><span class="line">            System.out.println(textMessage.getText());</span><br><span class="line">        &#125; catch (JMSException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125; catch (JMSException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上为非订阅模式如果需要订阅模式 在session.createQueue处修改为session.createTopic即可</p>
 <p>在这里要注意这两个模式的区别</p>
-<h2 id="active集群配置"><a href="#active集群配置" class="headerlink" title="active集群配置"></a>active集群配置</h2><p>activemq.xml</p>
-<networkconnectors><br><br>​    <networkconnector name="*" uri="static:(tcp://ip:port,tcp://ip:port)"><br><br></networkconnector></networkconnectors>
-
+<h1 id="Master-Slave共享存储集群搭建"><a href="#Master-Slave共享存储集群搭建" class="headerlink" title="Master/Slave共享存储集群搭建"></a>Master/Slave共享存储集群搭建</h1><p>一般activemq的Master Slave是基于KAHADB的阻塞来做的</p>
+<h3 id="activemq服务器结构"><a href="#activemq服务器结构" class="headerlink" title="activemq服务器结构"></a>activemq服务器结构</h3><p>在这里是使用三个节点进行配置 这三个节点</p>
+<p>activemq.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;networkConnectors&gt;</span><br><span class="line"></span><br><span class="line">	&lt;networkConnector name = &quot;*&quot; uri=&quot;static:(tcp://ip:port,tcp://ip:port)&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/networkConnectors&gt;</span><br></pre></td></tr></table></figure>
 <p>jetty.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </the>
       
     </div>
@@ -352,7 +354,7 @@
         <p><span>本文标题:</span><a  href="/2018/07/22/activemq/">activemq</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吾生有崖,而知无崖 的个人博客">吾生有崖,而知无崖</a></p>
         <p><span>发布时间:</span>2018年07月22日 - 17时30分</p>
-        <p><span>最后更新:</span>2018年07月22日 - 22时39分</p>
+        <p><span>最后更新:</span>2018年07月24日 - 15时20分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/22/activemq/" title="activemq">http://sharehe.cn/2018/07/22/activemq/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sharehe.cn/2018/07/22/activemq/　　作者: 吾生有崖,而知无崖" title=""></span>
@@ -380,7 +382,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#activemq与rabbitmq的区别"><span class="toc-number">1.</span> <span class="toc-text">activemq与rabbitmq的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JMS"><span class="toc-number"></span> <span class="toc-text">JMS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置activemq"><span class="toc-number"></span> <span class="toc-text">配置activemq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用jms操作消息队列"><span class="toc-number"></span> <span class="toc-text">使用jms操作消息队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加入依赖"><span class="toc-number"></span> <span class="toc-text">加入依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送消息"><span class="toc-number"></span> <span class="toc-text">发送消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接收消息"><span class="toc-number"></span> <span class="toc-text">接收消息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#active集群配置"><span class="toc-number"></span> <span class="toc-text">active集群配置</span></a>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#activemq与rabbitmq的区别"><span class="toc-number">1.</span> <span class="toc-text">activemq与rabbitmq的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JMS"><span class="toc-number"></span> <span class="toc-text">JMS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置activemq"><span class="toc-number"></span> <span class="toc-text">配置activemq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用jms操作消息队列"><span class="toc-number"></span> <span class="toc-text">使用jms操作消息队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加入依赖"><span class="toc-number"></span> <span class="toc-text">加入依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送消息"><span class="toc-number"></span> <span class="toc-text">发送消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接收消息"><span class="toc-number"></span> <span class="toc-text">接收消息</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Master-Slave共享存储集群搭建"><span class="toc-number"></span> <span class="toc-text">Master/Slave共享存储集群搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#activemq服务器结构"><span class="toc-number"></span> <span class="toc-text">activemq服务器结构</span></a>
 </div>
 <style>
     .left-col .switch-btn {
